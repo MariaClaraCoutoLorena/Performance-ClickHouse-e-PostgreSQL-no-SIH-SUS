@@ -1,0 +1,215 @@
+--------------- POSTGRESQL ---------------
+
+1. Estrutura de Particionamento Físico (Mês de Competência)
+tabela_principal  nome_particao         valor_do_mes
+          sih_rd sih_rd_default              DEFAULT
+          sih_rd     sih_rd_m01 FOR VALUES IN ('01')
+          sih_rd     sih_rd_m02 FOR VALUES IN ('02')
+          sih_rd     sih_rd_m03 FOR VALUES IN ('03')
+          sih_rd     sih_rd_m04 FOR VALUES IN ('04')
+          sih_rd     sih_rd_m05 FOR VALUES IN ('05')
+          sih_rd     sih_rd_m06 FOR VALUES IN ('06')
+          sih_rd     sih_rd_m07 FOR VALUES IN ('07')
+          sih_rd     sih_rd_m08 FOR VALUES IN ('08')
+          sih_rd     sih_rd_m09 FOR VALUES IN ('09')
+          sih_rd     sih_rd_m10 FOR VALUES IN ('10')
+          sih_rd     sih_rd_m11 FOR VALUES IN ('11')
+          sih_rd     sih_rd_m12 FOR VALUES IN ('12')
+          sih_sp sih_sp_default              DEFAULT
+          sih_sp     sih_sp_m01 FOR VALUES IN ('01')
+          sih_sp     sih_sp_m02 FOR VALUES IN ('02')
+          sih_sp     sih_sp_m03 FOR VALUES IN ('03')
+          sih_sp     sih_sp_m04 FOR VALUES IN ('04')
+          sih_sp     sih_sp_m05 FOR VALUES IN ('05')
+          sih_sp     sih_sp_m06 FOR VALUES IN ('06')
+          sih_sp     sih_sp_m07 FOR VALUES IN ('07')
+          sih_sp     sih_sp_m08 FOR VALUES IN ('08')
+          sih_sp     sih_sp_m09 FOR VALUES IN ('09')
+          sih_sp     sih_sp_m10 FOR VALUES IN ('10')
+          sih_sp     sih_sp_m11 FOR VALUES IN ('11')
+          sih_sp     sih_sp_m12 FOR VALUES IN ('12')
+
+2. Índices Atuais (B-Tree e BRIN)
+tabela_ou_particao                   nome_indice
+            sih_rd                idx_pg_rd_cnes
+            sih_rd          idx_pg_rd_diag_princ
+            sih_rd             idx_pg_rd_dtinter
+            sih_rd             idx_pg_rd_dtsaida
+            sih_rd                idx_pg_rd_naih
+    sih_rd_default       sih_rd_default_CNES_idx
+    sih_rd_default sih_rd_default_DIAG_PRINC_idx
+    sih_rd_default   sih_rd_default_DT_INTER_idx
+    sih_rd_default   sih_rd_default_DT_SAIDA_idx
+    sih_rd_default      sih_rd_default_N_AIH_idx
+        sih_rd_m01           sih_rd_m01_CNES_idx
+        sih_rd_m01     sih_rd_m01_DIAG_PRINC_idx
+        sih_rd_m01       sih_rd_m01_DT_INTER_idx
+        sih_rd_m01       sih_rd_m01_DT_SAIDA_idx
+        sih_rd_m01          sih_rd_m01_N_AIH_idx
+        sih_rd_m02           sih_rd_m02_CNES_idx
+        sih_rd_m02     sih_rd_m02_DIAG_PRINC_idx
+        sih_rd_m02       sih_rd_m02_DT_INTER_idx
+        sih_rd_m02       sih_rd_m02_DT_SAIDA_idx
+        sih_rd_m02          sih_rd_m02_N_AIH_idx
+        sih_rd_m03           sih_rd_m03_CNES_idx
+        sih_rd_m03     sih_rd_m03_DIAG_PRINC_idx
+        sih_rd_m03       sih_rd_m03_DT_INTER_idx
+        sih_rd_m03       sih_rd_m03_DT_SAIDA_idx
+        sih_rd_m03          sih_rd_m03_N_AIH_idx
+        sih_rd_m04           sih_rd_m04_CNES_idx
+        sih_rd_m04     sih_rd_m04_DIAG_PRINC_idx
+        sih_rd_m04       sih_rd_m04_DT_INTER_idx
+        sih_rd_m04       sih_rd_m04_DT_SAIDA_idx
+        sih_rd_m04          sih_rd_m04_N_AIH_idx
+        sih_rd_m05           sih_rd_m05_CNES_idx
+        sih_rd_m05     sih_rd_m05_DIAG_PRINC_idx
+        sih_rd_m05       sih_rd_m05_DT_INTER_idx
+        sih_rd_m05       sih_rd_m05_DT_SAIDA_idx
+        sih_rd_m05          sih_rd_m05_N_AIH_idx
+        sih_rd_m06           sih_rd_m06_CNES_idx
+        sih_rd_m06     sih_rd_m06_DIAG_PRINC_idx
+        sih_rd_m06       sih_rd_m06_DT_INTER_idx
+        sih_rd_m06       sih_rd_m06_DT_SAIDA_idx
+        sih_rd_m06          sih_rd_m06_N_AIH_idx
+        sih_rd_m07           sih_rd_m07_CNES_idx
+        sih_rd_m07     sih_rd_m07_DIAG_PRINC_idx
+        sih_rd_m07       sih_rd_m07_DT_INTER_idx
+        sih_rd_m07       sih_rd_m07_DT_SAIDA_idx
+        sih_rd_m07          sih_rd_m07_N_AIH_idx
+        sih_rd_m08           sih_rd_m08_CNES_idx
+        sih_rd_m08     sih_rd_m08_DIAG_PRINC_idx
+        sih_rd_m08       sih_rd_m08_DT_INTER_idx
+        sih_rd_m08       sih_rd_m08_DT_SAIDA_idx
+        sih_rd_m08          sih_rd_m08_N_AIH_idx
+        sih_rd_m09           sih_rd_m09_CNES_idx
+        sih_rd_m09     sih_rd_m09_DIAG_PRINC_idx
+        sih_rd_m09       sih_rd_m09_DT_INTER_idx
+        sih_rd_m09       sih_rd_m09_DT_SAIDA_idx
+        sih_rd_m09          sih_rd_m09_N_AIH_idx
+        sih_rd_m10           sih_rd_m10_CNES_idx
+        sih_rd_m10     sih_rd_m10_DIAG_PRINC_idx
+        sih_rd_m10       sih_rd_m10_DT_INTER_idx
+        sih_rd_m10       sih_rd_m10_DT_SAIDA_idx
+        sih_rd_m10          sih_rd_m10_N_AIH_idx
+        sih_rd_m11           sih_rd_m11_CNES_idx
+        sih_rd_m11     sih_rd_m11_DIAG_PRINC_idx
+        sih_rd_m11       sih_rd_m11_DT_INTER_idx
+        sih_rd_m11       sih_rd_m11_DT_SAIDA_idx
+        sih_rd_m11          sih_rd_m11_N_AIH_idx
+        sih_rd_m12           sih_rd_m12_CNES_idx
+        sih_rd_m12     sih_rd_m12_DIAG_PRINC_idx
+        sih_rd_m12       sih_rd_m12_DT_INTER_idx
+        sih_rd_m12       sih_rd_m12_DT_SAIDA_idx
+        sih_rd_m12          sih_rd_m12_N_AIH_idx
+            sih_sp                idx_pg_sp_cnes
+            sih_sp             idx_pg_sp_dtinter
+            sih_sp             idx_pg_sp_dtsaida
+            sih_sp                idx_pg_sp_naih
+            sih_sp             idx_pg_sp_procrea
+    sih_sp_default    sih_sp_default_SP_CNES_idx
+    sih_sp_default sih_sp_default_SP_DTINTER_idx
+    sih_sp_default sih_sp_default_SP_DTSAIDA_idx
+    sih_sp_default    sih_sp_default_SP_NAIH_idx
+    sih_sp_default sih_sp_default_SP_PROCREA_idx
+        sih_sp_m01        sih_sp_m01_SP_CNES_idx
+        sih_sp_m01     sih_sp_m01_SP_DTINTER_idx
+        sih_sp_m01     sih_sp_m01_SP_DTSAIDA_idx
+        sih_sp_m01        sih_sp_m01_SP_NAIH_idx
+        sih_sp_m01     sih_sp_m01_SP_PROCREA_idx
+        sih_sp_m02        sih_sp_m02_SP_CNES_idx
+        sih_sp_m02     sih_sp_m02_SP_DTINTER_idx
+        sih_sp_m02     sih_sp_m02_SP_DTSAIDA_idx
+        sih_sp_m02        sih_sp_m02_SP_NAIH_idx
+        sih_sp_m02     sih_sp_m02_SP_PROCREA_idx
+        sih_sp_m03        sih_sp_m03_SP_CNES_idx
+        sih_sp_m03     sih_sp_m03_SP_DTINTER_idx
+        sih_sp_m03     sih_sp_m03_SP_DTSAIDA_idx
+        sih_sp_m03        sih_sp_m03_SP_NAIH_idx
+        sih_sp_m03     sih_sp_m03_SP_PROCREA_idx
+        sih_sp_m04        sih_sp_m04_SP_CNES_idx
+        sih_sp_m04     sih_sp_m04_SP_DTINTER_idx
+        sih_sp_m04     sih_sp_m04_SP_DTSAIDA_idx
+        sih_sp_m04        sih_sp_m04_SP_NAIH_idx
+        sih_sp_m04     sih_sp_m04_SP_PROCREA_idx
+        sih_sp_m05        sih_sp_m05_SP_CNES_idx
+        sih_sp_m05     sih_sp_m05_SP_DTINTER_idx
+        sih_sp_m05     sih_sp_m05_SP_DTSAIDA_idx
+        sih_sp_m05        sih_sp_m05_SP_NAIH_idx
+        sih_sp_m05     sih_sp_m05_SP_PROCREA_idx
+        sih_sp_m06        sih_sp_m06_SP_CNES_idx
+        sih_sp_m06     sih_sp_m06_SP_DTINTER_idx
+        sih_sp_m06     sih_sp_m06_SP_DTSAIDA_idx
+        sih_sp_m06        sih_sp_m06_SP_NAIH_idx
+        sih_sp_m06     sih_sp_m06_SP_PROCREA_idx
+        sih_sp_m07        sih_sp_m07_SP_CNES_idx
+        sih_sp_m07     sih_sp_m07_SP_DTINTER_idx
+        sih_sp_m07     sih_sp_m07_SP_DTSAIDA_idx
+        sih_sp_m07        sih_sp_m07_SP_NAIH_idx
+        sih_sp_m07     sih_sp_m07_SP_PROCREA_idx
+        sih_sp_m08        sih_sp_m08_SP_CNES_idx
+        sih_sp_m08     sih_sp_m08_SP_DTINTER_idx
+        sih_sp_m08     sih_sp_m08_SP_DTSAIDA_idx
+        sih_sp_m08        sih_sp_m08_SP_NAIH_idx
+        sih_sp_m08     sih_sp_m08_SP_PROCREA_idx
+        sih_sp_m09        sih_sp_m09_SP_CNES_idx
+        sih_sp_m09     sih_sp_m09_SP_DTINTER_idx
+        sih_sp_m09     sih_sp_m09_SP_DTSAIDA_idx
+        sih_sp_m09        sih_sp_m09_SP_NAIH_idx
+        sih_sp_m09     sih_sp_m09_SP_PROCREA_idx
+        sih_sp_m10        sih_sp_m10_SP_CNES_idx
+        sih_sp_m10     sih_sp_m10_SP_DTINTER_idx
+        sih_sp_m10     sih_sp_m10_SP_DTSAIDA_idx
+        sih_sp_m10        sih_sp_m10_SP_NAIH_idx
+        sih_sp_m10     sih_sp_m10_SP_PROCREA_idx
+        sih_sp_m11        sih_sp_m11_SP_CNES_idx
+        sih_sp_m11     sih_sp_m11_SP_DTINTER_idx
+        sih_sp_m11     sih_sp_m11_SP_DTSAIDA_idx
+        sih_sp_m11        sih_sp_m11_SP_NAIH_idx
+        sih_sp_m11     sih_sp_m11_SP_PROCREA_idx
+        sih_sp_m12        sih_sp_m12_SP_CNES_idx
+        sih_sp_m12     sih_sp_m12_SP_DTINTER_idx
+        sih_sp_m12     sih_sp_m12_SP_DTSAIDA_idx
+        sih_sp_m12        sih_sp_m12_SP_NAIH_idx
+        sih_sp_m12     sih_sp_m12_SP_PROCREA_idx
+
+3. Tamanho no Disco (Tabelas e Partições)
+tabela_ou_particao tamanho_total_no_disco
+        sih_sp_m10                1270 MB
+        sih_sp_m08                1255 MB
+        sih_sp_m05                1249 MB
+        sih_sp_m07                1232 MB
+        sih_sp_m04                1224 MB
+        sih_sp_m03                1219 MB
+        sih_sp_m09                1218 MB
+        sih_sp_m06                1211 MB
+        sih_sp_m11                1206 MB
+        sih_sp_m12                1176 MB
+        sih_sp_m01                1133 MB
+        sih_sp_m02                1131 MB
+        sih_rd_m10                 182 MB
+        sih_rd_m05                 179 MB
+        sih_rd_m08                 179 MB
+        sih_rd_m04                 178 MB
+        sih_rd_m03                 176 MB
+        sih_rd_m07                 176 MB
+        sih_rd_m06                 175 MB
+        sih_rd_m09                 175 MB
+        sih_rd_m11                 171 MB
+        sih_rd_m12                 164 MB
+        sih_rd_m01                 162 MB
+        sih_rd_m02                 161 MB
+    sih_sp_default                 128 kB
+    sih_rd_default                 128 kB
+
+
+--------------- CLICKHOUSE ---------------
+
+1. Índices Atuais (Índice Esparso / Primary Key)
+tabela     motor chave_ordenacao
+sih_rd MergeTree                
+sih_sp MergeTree                
+
+2. Taxa de Compressão (Armazenamento Colunar)
+tabela tamanho_bruto tamanho_real_disco  taxa_reducao
+sih_rd      3.38 GiB         219.27 MiB          15.8
+sih_sp     21.71 GiB         900.13 MiB          24.7
