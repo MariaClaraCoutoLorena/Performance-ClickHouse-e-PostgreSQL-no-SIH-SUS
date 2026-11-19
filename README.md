@@ -1,2 +1,2 @@
-# Performance-ClickHouse-e-PostgreSQL-no-SIH-SUS
-Análise comparativa do ClickHouse e do PostgreSQL na inserção e consulta sobre os dados de São Paulo de 2024 das tabelas SP e RD do SIH SUS
+# Performance of ClickHouse and PostgreSQL in SIH-SUS
+A comparative analysis of ClickHouse and PostgreSQL regarding data insertion and querying, using 2024 data for the state of São Paulo from the SIH-SUS 'SP' and 'RD' tables.
