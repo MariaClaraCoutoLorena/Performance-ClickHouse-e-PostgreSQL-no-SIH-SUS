@@ -1,0 +1,5 @@
+SELECT SUBSTRING("DT_INTER", 1, 4) as ano, SUBSTRING("DT_INTER", 5, 2) as mes, COUNT(*) as internacoes
+FROM sih_rd
+WHERE length("DT_INTER") = 8
+GROUP BY SUBSTRING("DT_INTER", 1, 4), SUBSTRING("DT_INTER", 5, 2)
+ORDER BY ano, mes

@@ -1,0 +1,4 @@
+SELECT "MUNIC_RES", COUNT(*) as qtd_idosos 
+FROM sih_rd 
+WHERE "IDADE" > 60 
+GROUP BY "MUNIC_RES"
