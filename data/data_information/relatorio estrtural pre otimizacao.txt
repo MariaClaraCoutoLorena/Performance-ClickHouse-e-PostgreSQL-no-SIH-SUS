@@ -1,0 +1,24 @@
+RELATÓRIO ESTRUTURAL (ANTES DA OTIMIZAÇÃO)
+POSTGRESQL
+
+1. índices atuais(Mapeamento de Árvore-B)
+Empty DataFrame
+Columns: [tabela, nome_indice]
+Index: []
+
+2. tamanho
+tabela tamanho_no_disco
+sih_rd          1950 MB
+sih_sp            13 GB
+
+CLICKHOUSE
+
+1. Míndices atuais (Índice Esparso)
+tabela     motor chave_ordenacao
+sih_rd MergeTree                
+sih_sp MergeTree                
+
+2. taxa de compressão (Vetorização)
+tabela tamanho_bruto tamanho_real_disco  taxa_reducao
+sih_rd      3.38 GiB         219.27 MiB          15.8
+sih_sp     21.71 GiB         900.13 MiB          24.7
