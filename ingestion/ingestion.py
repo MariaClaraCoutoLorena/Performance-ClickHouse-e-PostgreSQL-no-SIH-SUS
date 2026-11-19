@@ -187,7 +187,7 @@ def iniciar_insercao():
             time.sleep(2)
 
         df_resultados = pd.DataFrame(resultados)
-        df_resultados.to_csv('metricas_ingestao_oficial.csv', index=False, sep=';', decimal=',')
+        df_resultados.to_csv('analysis/metricas_ingestao_oficial.csv', index=False, sep=';', decimal=',')
         print(f"\n[Rodada {rodada} concluída e salva no CSV]")
 
     print("\nTodos os testes finalizados com sucesso!")
