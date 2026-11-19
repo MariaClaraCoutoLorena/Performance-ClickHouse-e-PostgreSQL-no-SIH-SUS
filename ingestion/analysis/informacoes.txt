@@ -1,0 +1,91 @@
+============================================================
+ RELATÓRIO ESTATÍSTICO - MÉTRICAS DE INGESTÃO (SIH-SUS)
+============================================================
+
+1. MÉDIAS GERAIS POR BANCO E GRUPO (Com Desvio Padrão)
+------------------------------------------------------------
+
+[ClickHouse] - Grupo RD
+ -> Latência (segundos):   3.31   (± 0.09)
+ -> Vazão (linhas/seg):   71.818  (± 2.041)
+ -> Consumo CPU (%):      13.40   (± 1.99)
+ -> Pico RAM (%):         68.18   (± 4.62)
+
+[ClickHouse] - Grupo SP
+ -> Latência (segundos):  13.82   (± 0.59)
+ -> Vazão (linhas/seg):  281.422  (± 5.522)
+ -> Consumo CPU (%):      15.32   (± 1.82)
+ -> Pico RAM (%):         79.55   (± 2.88)
+
+[PostgreSQL] - Grupo RD
+ -> Latência (segundos):  76.66   (± 3.38)
+ -> Vazão (linhas/seg):   3.106   (± 80)
+ -> Consumo CPU (%):       9.51   (± 0.83)
+ -> Pico RAM (%):         68.95   (± 4.40)
+
+[PostgreSQL] - Grupo SP
+ -> Latência (segundos):  352.44  (± 13.33)
+ -> Vazão (linhas/seg):   11.032  (± 107)
+ -> Consumo CPU (%):       9.81   (± 0.44)
+ -> Pico RAM (%):         79.99   (± 3.65)
+
+
+============================================================
+2. MÉDIAS DETALHADAS POR MÊS
+============================================================
+
+--- PostgreSQL | Grupo RD ---
+ Mês 01: Latência =  72.95s | Vazão =      3.060 linhas/s
+ Mês 02: Latência =  72.07s | Vazão =      3.072 linhas/s
+ Mês 03: Latência =  78.07s | Vazão =      3.100 linhas/s
+ Mês 04: Latência =  78.79s | Vazão =      3.110 linhas/s
+ Mês 05: Latência =  79.46s | Vazão =      3.104 linhas/s
+ Mês 06: Latência =  77.39s | Vazão =      3.110 linhas/s
+ Mês 07: Latência =  78.14s | Vazão =      3.091 linhas/s
+ Mês 08: Latência =  78.97s | Vazão =      3.117 linhas/s
+ Mês 09: Latência =  77.25s | Vazão =      3.109 linhas/s
+ Mês 10: Latência =  79.61s | Vazão =      3.143 linhas/s
+ Mês 11: Latência =  74.93s | Vazão =      3.129 linhas/s
+ Mês 12: Latência =  72.29s | Vazão =      3.125 linhas/s
+
+--- PostgreSQL | Grupo SP ---
+ Mês 01: Latência = 326.56s | Vazão =     11.142 linhas/s
+ Mês 02: Latência = 328.89s | Vazão =     11.050 linhas/s
+ Mês 03: Latência = 354.44s | Vazão =     11.051 linhas/s
+ Mês 04: Latência = 355.42s | Vazão =     11.057 linhas/s
+ Mês 05: Latência = 364.20s | Vazão =     11.018 linhas/s
+ Mês 06: Latência = 351.83s | Vazão =     11.053 linhas/s
+ Mês 07: Latência = 359.29s | Vazão =     11.018 linhas/s
+ Mês 08: Latência = 365.05s | Vazão =     11.042 linhas/s
+ Mês 09: Latência = 356.36s | Vazão =     10.977 linhas/s
+ Mês 10: Latência = 370.31s | Vazão =     11.014 linhas/s
+ Mês 11: Latência = 354.15s | Vazão =     10.943 linhas/s
+ Mês 12: Latência = 342.73s | Vazão =     11.021 linhas/s
+
+--- ClickHouse | Grupo RD ---
+ Mês 01: Latência =   3.24s | Vazão =     68.852 linhas/s
+ Mês 02: Latência =   3.19s | Vazão =     69.371 linhas/s
+ Mês 03: Latência =   3.37s | Vazão =     71.790 linhas/s
+ Mês 04: Latência =   3.37s | Vazão =     72.708 linhas/s
+ Mês 05: Latência =   3.38s | Vazão =     72.819 linhas/s
+ Mês 06: Latência =   3.31s | Vazão =     72.634 linhas/s
+ Mês 07: Latência =   3.32s | Vazão =     72.872 linhas/s
+ Mês 08: Latência =   3.36s | Vazão =     73.318 linhas/s
+ Mês 09: Latência =   3.32s | Vazão =     72.236 linhas/s
+ Mês 10: Latência =   3.40s | Vazão =     73.539 linhas/s
+ Mês 11: Latência =   3.28s | Vazão =     71.392 linhas/s
+ Mês 12: Latência =   3.21s | Vazão =     70.288 linhas/s
+
+--- ClickHouse | Grupo SP ---
+ Mês 01: Latência =  12.84s | Vazão =    283.462 linhas/s
+ Mês 02: Latência =  12.81s | Vazão =    283.737 linhas/s
+ Mês 03: Latência =  13.79s | Vazão =    284.079 linhas/s
+ Mês 04: Latência =  13.93s | Vazão =    282.144 linhas/s
+ Mês 05: Latência =  14.43s | Vazão =    278.197 linhas/s
+ Mês 06: Latência =  13.71s | Vazão =    283.879 linhas/s
+ Mês 07: Latência =  14.01s | Vazão =    282.511 linhas/s
+ Mês 08: Latência =  14.20s | Vazão =    283.870 linhas/s
+ Mês 09: Latência =  14.31s | Vazão =    273.332 linhas/s
+ Mês 10: Latência =  14.58s | Vazão =    279.722 linhas/s
+ Mês 11: Latência =  13.75s | Vazão =    281.995 linhas/s
+ Mês 12: Latência =  13.49s | Vazão =    280.129 linhas/s
