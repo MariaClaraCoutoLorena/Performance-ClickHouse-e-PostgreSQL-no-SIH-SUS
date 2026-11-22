@@ -15,7 +15,7 @@ services:
       resources:
         limits:
           cpus: '2.0'
-          memory: 4G
+          memory: 8G
 
   clickhouse_tcc:
     image: clickhouse/clickhouse-server:latest
@@ -38,7 +38,7 @@ services:
       resources:
         limits:
           cpus: '2.0'     
-          memory: 4G 
+          memory: 8G 
 
 volumes:
   pg_data:
