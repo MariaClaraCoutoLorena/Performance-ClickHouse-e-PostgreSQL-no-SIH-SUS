@@ -12,6 +12,9 @@ pico_cpu = 0.0
 pico_ram = 0.0
 media_cpu = 0.0
 media_ram = 0.0
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PASTA_DATA = os.path.join(BASE_DIR, 'data')
+TOTAL_RODADAS = 30
 
 def monitorar_recursos():
     global monitorando, pico_cpu, pico_ram, media_cpu, media_ram
@@ -48,7 +51,7 @@ def conectar_bancos():
     return pg_engine, ch_client
 
 def limpar_tabelas_da_rodada(pg_engine, ch_client):
-    print("  -> Limpando tabelas antigas para iniciar a rodada com os bancos zerados...")
+    print("-> Limpando tabelas antigas para iniciar a rodada com os bancos zerados")
     for grupo in ['sih_rd', 'sih_sp']:
         # Limpa PostgreSQL
         with pg_engine.connect() as conn:
@@ -60,7 +63,7 @@ def limpar_tabelas_da_rodada(pg_engine, ch_client):
 def executar_postgres(df, grupo, pg_engine, arquivo, linhas, rodada, ordem):
     global monitorando, pico_cpu, pico_ram, media_cpu, media_ram
     
-    print(f"  [{ordem}º] PostgreSQL inserindo {linhas:,} registros...".replace(',', '.'))
+    print(f"  [{ordem}º] PostgreSQL inserindo {linhas:,} registros.".replace(',', '.'))
 
     monitorando = True
     thread_mon = threading.Thread(target=monitorar_recursos)
@@ -91,7 +94,7 @@ def executar_postgres(df, grupo, pg_engine, arquivo, linhas, rodada, ordem):
 def executar_clickhouse(df, grupo, ch_client, arquivo, linhas, rodada, ordem):
     global monitorando, pico_cpu, pico_ram, media_cpu, media_ram
     
-    print(f"  [{ordem}º] ClickHouse inserindo {linhas:,} registros...".replace(',', '.'))
+    print(f"  [{ordem}º] ClickHouse inserindo {linhas:,} registros.".replace(',', '.'))
     
     colunas_ch = []
     for coluna, tipo in df.dtypes.items():
@@ -133,30 +136,25 @@ def executar_clickhouse(df, grupo, ch_client, arquivo, linhas, rodada, ordem):
 def iniciar_insercao():
     pg_engine, ch_client = conectar_bancos()
     
-    if not os.path.exists('data'):
-        print("Pasta 'data' não encontrada.")
+    if not os.path.exists(PASTA_DATA):
+        print(f"Pasta '{PASTA_DATA}' não encontrada.")
         return
         
-    arquivos = [f for f in os.listdir('data') if f.endswith('.parquet')]
+    arquivos = [f for f in os.listdir(PASTA_DATA) if f.endswith('.parquet')]
     arquivos.sort()
     resultados = []
-    TOTAL_RODADAS = 30
-
-    print(f"Iniciando {TOTAL_RODADAS} rodadas de testes com {len(arquivos)} arquivos.\n")
 
     for rodada in range(1, TOTAL_RODADAS + 1):
         print(f"\n{'='*40}")
         print(f" INICIANDO RODADA {rodada}/{TOTAL_RODADAS}")
         print(f"{'='*40}")
         
-        # GARANTE QUE A RODADA COMECE COM OS BANCOS ZERADOS
         limpar_tabelas_da_rodada(pg_engine, ch_client)
         
-        # Define quem roda primeiro com base em par/ímpar
         pg_primeiro = (rodada % 2 != 0)
 
         for arquivo in arquivos:
-            caminho = os.path.join('data', arquivo)
+            caminho = os.path.join(PASTA_DATA, arquivo)
             grupo = 'sih_rd' if 'RD' in arquivo else 'sih_sp'
             
             print(f"\nLendo arquivo: {arquivo}")
@@ -164,27 +162,25 @@ def iniciar_insercao():
             linhas = len(df)
             
             if pg_primeiro:
-                # PostgreSQL primeiro, ClickHouse em segundo
                 res_pg = executar_postgres(df, grupo, pg_engine, arquivo, linhas, rodada, ordem=1)
                 resultados.append(res_pg)
                 
-                time.sleep(3) # Pausa para resfriamento de CPU/RAM
+                time.sleep(2)
                 
                 res_ch = executar_clickhouse(df, grupo, ch_client, arquivo, linhas, rodada, ordem=2)
                 resultados.append(res_ch)
             else:
-                # ClickHouse primeiro, PostgreSQL em segundo
                 res_ch = executar_clickhouse(df, grupo, ch_client, arquivo, linhas, rodada, ordem=1)
                 resultados.append(res_ch)
                 
-                time.sleep(3) # Pausa para resfriamento de CPU/RAM
+                time.sleep(2)
                 
                 res_pg = executar_postgres(df, grupo, pg_engine, arquivo, linhas, rodada, ordem=2)
                 resultados.append(res_pg)
             
             del df
-            gc.collect() # Força a limpeza da memória do Pandas antes do próximo arquivo
-            time.sleep(2)
+            gc.collect()
+            time.sleep(1)
 
         df_resultados = pd.DataFrame(resultados)
         df_resultados.to_csv('analysis/metricas_ingestao_oficial.csv', index=False, sep=';', decimal=',')
