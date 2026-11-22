@@ -6,7 +6,7 @@ from pyreaddbc import dbc2dbf
 from dbfread import DBF
 
 def extrair_sih():
-    os.makedirs('dados', exist_ok=True)
+    os.makedirs('data', exist_ok=True)
     os.makedirs('temp_dbc', exist_ok=True) 
 
     grupos = ['RD', 'SP']
@@ -23,7 +23,7 @@ def extrair_sih():
             
             caminho_dbc = f"temp_dbc/{nome_arquivo_ftp}"
             caminho_dbf = f"temp_dbc/{nome_arquivo_ftp.replace('.dbc', '.dbf')}"
-            caminho_parquet = f"dados/sih_{grupo}_SP_2024_{mes:02d}.parquet"
+            caminho_parquet = f"data/sih_{grupo}_SP_2024_{mes:02d}.parquet"
 
             if os.path.exists(caminho_parquet):
                 
