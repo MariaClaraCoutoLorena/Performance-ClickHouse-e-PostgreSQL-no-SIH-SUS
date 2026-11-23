@@ -6,6 +6,8 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 import clickhouse_connect
 import gc
+import csv
+from io import StringIO
 
 monitorando = False
 pico_cpu = 0.0
@@ -45,6 +47,23 @@ def monitorar_recursos():
         media_cpu = 0.0
         media_ram = 0.0
 
+def psql_insert_copy(table, conn, keys, data_iter):
+    dbapi_conn = conn.connection
+    with dbapi_conn.cursor() as cur:
+        s_buf = StringIO()
+        writer = csv.writer(s_buf)
+        writer.writerows(data_iter)
+        s_buf.seek(0)
+
+        columns = ', '.join(f'"{k}"' for k in keys)
+        if table.schema:
+            table_name = f"{table.schema}.{table.name}"
+        else:
+            table_name = table.name
+
+        sql = f'COPY {table_name} ({columns}) FROM STDIN WITH CSV'
+        cur.copy_expert(sql=sql, file=s_buf)
+
 def conectar_bancos():
     pg_engine = create_engine('postgresql+psycopg2://admin:admin@localhost:5432/sih_db')
     ch_client = clickhouse_connect.get_client(host='localhost', port=8123, username='admin', password='admin', database='sih_db')
@@ -70,7 +89,7 @@ def executar_postgres(df, grupo, pg_engine, arquivo, linhas, rodada, ordem):
     thread_mon.start()        
     
     t0_pg = time.time()
-    df.to_sql(grupo, pg_engine, if_exists='append', index=False, chunksize=50000)
+    df.to_sql(grupo, pg_engine, if_exists='append', index=False, chunksize=50000, method=psql_insert_copy)
     tempo_pg = time.time() - t0_pg
     
     monitorando = False
