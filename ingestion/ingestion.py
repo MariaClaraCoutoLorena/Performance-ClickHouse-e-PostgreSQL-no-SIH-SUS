@@ -16,7 +16,7 @@ media_cpu = 0.0
 media_ram = 0.0
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PASTA_DATA = os.path.join(BASE_DIR, 'data')
-TOTAL_RODADAS = 30
+TOTAL_RODADAS = 60
 
 def monitorar_recursos():
     global monitorando, pico_cpu, pico_ram, media_cpu, media_ram
@@ -66,7 +66,7 @@ def psql_insert_copy(table, conn, keys, data_iter):
 
 def conectar_bancos():
     pg_engine = create_engine('postgresql+psycopg2://admin:admin@localhost:5432/sih_db')
-    ch_client = clickhouse_connect.get_client(host='localhost', port=8123, username='admin', password='admin', database='sih_db')
+    ch_client = clickhouse_connect.get_client(host='localhost', port=8123, username='admin', password='admin', database='sih_db', connect_timeout=30, send_receive_timeout=600)
     return pg_engine, ch_client
 
 def limpar_tabelas_da_rodada(pg_engine, ch_client):
@@ -88,12 +88,13 @@ def executar_postgres(df, grupo, pg_engine, arquivo, linhas, rodada, ordem):
     thread_mon = threading.Thread(target=monitorar_recursos)
     thread_mon.start()        
     
-    t0_pg = time.time()
-    df.to_sql(grupo, pg_engine, if_exists='append', index=False, chunksize=50000, method=psql_insert_copy)
-    tempo_pg = time.time() - t0_pg
-    
-    monitorando = False
-    thread_mon.join()
+    try:
+        t0_pg = time.time()
+        df.to_sql(grupo, pg_engine, if_exists='append', index=False, chunksize=50000, method=psql_insert_copy)
+        tempo_pg = time.time() - t0_pg
+    finally:
+        monitorando = False
+        thread_mon.join()
     vazao_pg = linhas / tempo_pg
     
     return {
@@ -130,12 +131,16 @@ def executar_clickhouse(df, grupo, ch_client, arquivo, linhas, rodada, ordem):
     thread_mon = threading.Thread(target=monitorar_recursos)
     thread_mon.start()
     
-    t0_ch = time.time()
-    ch_client.insert_df(grupo, df)
-    tempo_ch = time.time() - t0_ch
+    try:
+        t0_ch = time.time()
+        chunk_size = 50000
+        for start in range(0, linhas, chunk_size):
+            ch_client.insert_df(grupo, df.iloc[start:start + chunk_size])
+        tempo_ch = time.time() - t0_ch
+    finally:
+        monitorando = False
+        thread_mon.join()
     
-    monitorando = False
-    thread_mon.join()
     vazao_ch = linhas / tempo_ch
     
     return {
