@@ -1,4 +1,0 @@
-SELECT "CNES", COUNT(*) as casos 
-FROM sih_rd 
-WHERE "DIAG_PRINC" IN ('I219', 'J189', 'E119') 
-GROUP BY "CNES"

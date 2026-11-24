@@ -1,4 +1,0 @@
-SELECT "DIAG_PRINC", SUM("VAL_TOT") as gasto_doenca 
-FROM sih_rd 
-GROUP BY "DIAG_PRINC" 
-ORDER BY gasto_doenca DESC LIMIT 100

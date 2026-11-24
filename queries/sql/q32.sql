@@ -1,4 +1,0 @@
-SELECT UPPER(TRIM("DIAG_PRINC")) as diag_limpo, COUNT(*) as qtd 
-FROM sih_rd 
-GROUP BY UPPER(TRIM("DIAG_PRINC")) 
-ORDER BY qtd DESC LIMIT 100
