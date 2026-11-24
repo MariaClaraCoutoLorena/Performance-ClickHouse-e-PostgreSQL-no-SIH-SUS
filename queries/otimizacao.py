@@ -53,9 +53,6 @@ def criar_schema_otimizado(pg_engine):
         ("Copiar sih_sp para schema otimizado",
          f'CREATE TABLE "{SCHEMA_OTIMIZADO}".sih_sp AS TABLE "{SCHEMA_ORIGEM}".sih_sp;'),
 
-        ("Alinhar tipo de SEQUENCIA em sih_rd (bigint)",
-         f'ALTER TABLE "{SCHEMA_OTIMIZADO}".sih_rd ALTER COLUMN "SEQUENCIA" TYPE bigint USING "SEQUENCIA"::bigint;'),
-
         ("Criar PK composta em sih_rd",
          f'ALTER TABLE "{SCHEMA_OTIMIZADO}".sih_rd ADD PRIMARY KEY ("N_AIH", "ANO_CMPT", "MES_CMPT", "SEQUENCIA");'),
 
