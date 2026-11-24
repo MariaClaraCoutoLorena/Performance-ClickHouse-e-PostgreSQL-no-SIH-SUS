@@ -85,7 +85,7 @@ def limpar_caches_por_query(pg_engine, ch_client):
         pass
 
     gc.collect()
-    time.sleep(2)
+    time.sleep(1)
 
 
 def limpeza_profunda_docker_por_rodada():
@@ -94,11 +94,11 @@ def limpeza_profunda_docker_por_rodada():
 
     subprocess.run("docker-compose down", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     subprocess.run("docker system prune -f", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(3)
+    time.sleep(2)
     subprocess.run("docker-compose up -d", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    print("      [Docker Reiniciado] Aguardando 15s para estabilização dos bancos...")
-    time.sleep(15)
+    print("      [Docker Reiniciado] Aguardando 10s para estabilização dos bancos...")
+    time.sleep(10)
 
 
 def salvar_resultado(resultado, caminho_csv):
@@ -141,7 +141,7 @@ def executar_query_pg(engine, query, nome_query, rodada, ordem, schema, nome_ban
         status = 'Crash/Falha (Estouro de Recursos)'
 
         subprocess.run("docker-compose restart postgres", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        time.sleep(15)
+        time.sleep(10)
 
     return {
         'rodada': rodada, 'ordem_execucao': ordem, 'banco': nome_banco,

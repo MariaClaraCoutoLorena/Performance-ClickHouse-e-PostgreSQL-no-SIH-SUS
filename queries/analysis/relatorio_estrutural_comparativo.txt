@@ -1,0 +1,101 @@
+==========================================================================================
+RELATÓRIO ESTRUTURAL COMPARATIVO — SIH-SUS
+Gerado em: 23/11/2026 23:35:08
+==========================================================================================
+
+1. POSTGRESQL NORMAL (Schema: public)
+------------------------------------------------------------------------------------------
+1.1 Espaço em Disco e Volumetria:
+tabela  tuplas_estimadas tamanho_dados tamanho_indices tamanho_total_disco
+sih_rd           2856541       1965 MB         0 bytes             1965 MB
+sih_sp          46649040         13 GB         0 bytes               13 GB
+Total em disco (public): 14.65 GB
+
+1.2 Índices Ativos:
+Nenhum índice encontrado (apenas varredura sequencial).
+
+
+2. POSTGRESQL OTIMIZADO (Schema: sih_otimizado)
+------------------------------------------------------------------------------------------
+2.1 Espaço em Disco e Volumetria:
+tabela  tuplas_estimadas tamanho_dados tamanho_indices tamanho_total_disco
+sih_rd           2856113       1965 MB          597 MB             2562 MB
+sih_sp          46652932         13 GB         6056 MB               19 GB
+Total em disco (sih_otimizado): 21.14 GB (sendo 6.50 GB apenas de índices | overhead de +44.33% sobre o schema 'public')
+
+2.2 Índices Criados e Tamanhos:
+tabela          nome_indice tamanho_indice
+sih_rd          sih_rd_pkey         135 MB
+sih_rd    idx_pg_rd_dtinter         111 MB
+sih_rd       idx_pg_rd_cnes         110 MB
+sih_rd  idx_pg_rd_munic_res         110 MB
+sih_rd idx_pg_rd_diag_princ          86 MB
+sih_rd     idx_pg_rd_idosos          35 MB
+sih_rd    idx_pg_rd_morte_1        9784 kB
+sih_sp         idx_pg_sp_fk        3437 MB
+sih_sp    idx_pg_sp_procrea        2620 MB
+
+2.3 Definições SQL dos Índices:
+  - [sih_rd] sih_rd_pkey (135 MB):
+    CREATE UNIQUE INDEX sih_rd_pkey ON sih_otimizado.sih_rd USING btree ("N_AIH", "ANO_CMPT", "MES_CMPT", "SEQUENCIA");
+  - [sih_rd] idx_pg_rd_dtinter (111 MB):
+    CREATE INDEX idx_pg_rd_dtinter ON sih_otimizado.sih_rd USING btree ("DT_INTER") INCLUDE ("VAL_TOT");
+  - [sih_rd] idx_pg_rd_cnes (110 MB):
+    CREATE INDEX idx_pg_rd_cnes ON sih_otimizado.sih_rd USING btree ("CNES") INCLUDE ("VAL_TOT", "MUNIC_RES");
+  - [sih_rd] idx_pg_rd_munic_res (110 MB):
+    CREATE INDEX idx_pg_rd_munic_res ON sih_otimizado.sih_rd USING btree ("MUNIC_RES") INCLUDE ("VAL_TOT", "DIAG_PRINC");
+  - [sih_rd] idx_pg_rd_diag_princ (86 MB):
+    CREATE INDEX idx_pg_rd_diag_princ ON sih_otimizado.sih_rd USING btree ("DIAG_PRINC") INCLUDE ("VAL_TOT");
+  - [sih_rd] idx_pg_rd_idosos (35 MB):
+    CREATE INDEX idx_pg_rd_idosos ON sih_otimizado.sih_rd USING btree ("MUNIC_RES", "N_AIH") WHERE ("IDADE" > 60);
+  - [sih_rd] idx_pg_rd_morte_1 (9784 kB):
+    CREATE INDEX idx_pg_rd_morte_1 ON sih_otimizado.sih_rd USING btree ("MUNIC_RES", "N_AIH") INCLUDE ("VAL_TOT", "CNES", "DIAG_PRINC") WHERE ("MORTE" = 1);
+  - [sih_sp] idx_pg_sp_fk (3437 MB):
+    CREATE INDEX idx_pg_sp_fk ON sih_otimizado.sih_sp USING btree ("SP_NAIH", "SP_AA", "SP_MM", "SEQUENCIA") INCLUDE ("SP_VALATO", "SP_PROCREA");
+  - [sih_sp] idx_pg_sp_procrea (2620 MB):
+    CREATE INDEX idx_pg_sp_procrea ON sih_otimizado.sih_sp USING btree ("SP_PROCREA") INCLUDE ("SP_VALATO", "SP_NAIH");
+
+2.4 Tempo de Construção do Schema Otimizado e Índices:
+                                           etapa  tempo_segundos status
+                          Criar schema otimizado            0.00     OK
+      Limpar tabelas antigas no schema otimizado            0.00     OK
+             Copiar sih_rd para schema otimizado           17.93     OK
+             Copiar sih_sp para schema otimizado          230.84     OK
+                     Criar PK composta em sih_rd           14.45     OK
+                     Criar FK composta em sih_sp            0.01     OK
+          Índice idx_pg_rd_diag_princ (Covering)            5.18     OK
+           Índice idx_pg_rd_munic_res (Covering)           10.91     OK
+                Índice idx_pg_rd_cnes (Covering)            6.01     OK
+Índice idx_pg_rd_dtinter (Covering / Range Scan)            2.48     OK
+   Índice idx_pg_rd_morte_1 (Parcial + Covering)            0.76     OK
+               Índice idx_pg_rd_idosos (Parcial)            1.93     OK
+    Índice idx_pg_sp_fk (FK Composta + Covering)          223.24     OK
+             Índice idx_pg_sp_procrea (Covering)          120.36     OK
+                      ANALYZE sih_rd (otimizado)            1.88     OK
+                      ANALYZE sih_sp (otimizado)            1.60     OK
+                   ANALYZE tabelas base (public)            4.09     OK
+Tempo total de preparação: 641.67 segundos
+
+
+3. CLICKHOUSE (Database: sih_db)
+------------------------------------------------------------------------------------------
+3.1 Motor e Chaves (Índice Esparso MergeTree):
+tabela     motor chave_ordenacao chave_primaria  total_tuplas
+sih_rd MergeTree                                      2855539
+sih_sp MergeTree                                     46649388
+
+3.2 Armazenamento e Compressão Colunar:
+tabela  qtd_partes  total_linhas tamanho_bruto tamanho_real_disco  taxa_compressao
+sih_rd           7       2855539      3.38 GiB         218.03 MiB            15.89
+sih_sp           7      46649388     21.71 GiB         897.16 MiB            24.78
+Total bruto (descomprimido): 25.09 GB | Total real em disco: 1.09 GB
+
+
+==========================================================================================
+4. QUADRO COMPARATIVO FINAL DE ARMAZENAMENTO
+==========================================================================================
+                            Ambiente Espaco_Total_Disco                                               Observacao
+          PostgreSQL Normal (public)           14.65 GB                  Baseline orientado a linhas sem índices
+PostgreSQL Otimizado (sih_otimizado)           21.14 GB                 Overhead de +44.33% (6.50 GB em índices)
+              ClickHouse (MergeTree)            1.09 GB 13.4x menor que PG Normal | 19.4x menor que PG Otimizado
+==========================================================================================
