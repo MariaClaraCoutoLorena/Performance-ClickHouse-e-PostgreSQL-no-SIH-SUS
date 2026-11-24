@@ -1,0 +1,5 @@
+-- Q21: Bloco 2 - Manipulação de Strings (UPPER, TRIM) e Agregação
+SELECT UPPER(TRIM("DIAG_PRINC")) as diag_limpo, COUNT(*) as qtd
+FROM sih_rd
+GROUP BY UPPER(TRIM("DIAG_PRINC"))
+ORDER BY qtd DESC LIMIT 100;
