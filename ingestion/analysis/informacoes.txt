@@ -1,91 +1,460 @@
-============================================================
+======================================================================
  RELATÓRIO ESTATÍSTICO - MÉTRICAS DE INGESTÃO (SIH-SUS)
-============================================================
+======================================================================
 
-1. MÉDIAS GERAIS POR BANCO E GRUPO (Com Desvio Padrão)
-------------------------------------------------------------
+1. RELATÓRIO DE REMOÇÃO DE OUTLIERS (MÉTODO IQR POR ARQUIVO/RODADAS)
+----------------------------------------------------------------------
+Total de execuções originais: 2880 | Mantidas: 2609 | Removidas: 271
+
+>>> BANCO: PostgreSQL
+  Arquivo: sih_RD_SP_2024_01.parquet (Grupo RD | Mês 01)
+   -> Mantidas: 48/60 rodadas | Limites IQR: [3.53s a 5.02s]
+      * Rodada 2 removida -> Latência: 5.15s | Vazão: 43.275 linhas/s
+      * Rodada 8 removida -> Latência: 7.00s | Vazão: 31.856 linhas/s
+      * Rodada 13 removida -> Latência: 7.13s | Vazão: 31.246 linhas/s
+      * Rodada 19 removida -> Latência: 5.92s | Vazão: 37.637 linhas/s
+      * Rodada 22 removida -> Latência: 9.41s | Vazão: 23.679 linhas/s
+      * Rodada 25 removida -> Latência: 8.02s | Vazão: 27.793 linhas/s
+      * Rodada 26 removida -> Latência: 7.18s | Vazão: 31.018 linhas/s
+      * Rodada 35 removida -> Latência: 6.28s | Vazão: 35.466 linhas/s
+      * Rodada 44 removida -> Latência: 6.93s | Vazão: 32.171 linhas/s
+      * Rodada 48 removida -> Latência: 5.37s | Vazão: 41.471 linhas/s
+      * Rodada 57 removida -> Latência: 6.83s | Vazão: 32.641 linhas/s
+      * Rodada 58 removida -> Latência: 10.95s | Vazão: 20.348 linhas/s
+  Arquivo: sih_RD_SP_2024_02.parquet (Grupo RD | Mês 02)
+   -> Mantidas: 50/60 rodadas | Limites IQR: [3.75s a 4.60s]
+      * Rodada 8 removida -> Latência: 6.88s | Vazão: 32.134 linhas/s
+      * Rodada 13 removida -> Latência: 7.29s | Vazão: 30.341 linhas/s
+      * Rodada 19 removida -> Latência: 7.64s | Vazão: 28.940 linhas/s
+      * Rodada 22 removida -> Latência: 10.24s | Vazão: 21.596 linhas/s
+      * Rodada 25 removida -> Latência: 4.92s | Vazão: 44.935 linhas/s
+      * Rodada 26 removida -> Latência: 7.29s | Vazão: 30.319 linhas/s
+      * Rodada 35 removida -> Latência: 6.21s | Vazão: 35.585 linhas/s
+      * Rodada 44 removida -> Latência: 12.35s | Vazão: 17.902 linhas/s
+      * Rodada 50 removida -> Latência: 4.91s | Vazão: 44.989 linhas/s
+      * Rodada 57 removida -> Latência: 7.59s | Vazão: 29.133 linhas/s
+  Arquivo: sih_RD_SP_2024_03.parquet (Grupo RD | Mês 03)
+   -> Mantidas: 50/60 rodadas | Limites IQR: [4.03s a 5.14s]
+      * Rodada 4 removida -> Latência: 7.18s | Vazão: 33.672 linhas/s
+      * Rodada 8 removida -> Latência: 13.88s | Vazão: 17.426 linhas/s
+      * Rodada 13 removida -> Latência: 11.30s | Vazão: 21.408 linhas/s
+      * Rodada 25 removida -> Latência: 11.45s | Vazão: 21.121 linhas/s
+      * Rodada 26 removida -> Latência: 8.05s | Vazão: 30.056 linhas/s
+      * Rodada 35 removida -> Latência: 11.19s | Vazão: 21.616 linhas/s
+      * Rodada 45 removida -> Latência: 5.21s | Vazão: 46.407 linhas/s
+      * Rodada 48 removida -> Latência: 7.18s | Vazão: 33.680 linhas/s
+      * Rodada 50 removida -> Latência: 7.21s | Vazão: 33.552 linhas/s
+      * Rodada 57 removida -> Latência: 12.38s | Vazão: 19.535 linhas/s
+  Arquivo: sih_RD_SP_2024_04.parquet (Grupo RD | Mês 04)
+   -> Mantidas: 53/60 rodadas | Limites IQR: [4.12s a 5.14s]
+      * Rodada 25 removida -> Latência: 9.30s | Vazão: 26.319 linhas/s
+      * Rodada 31 removida -> Latência: 13.39s | Vazão: 18.282 linhas/s
+      * Rodada 45 removida -> Latência: 8.66s | Vazão: 28.270 linhas/s
+      * Rodada 48 removida -> Latência: 11.70s | Vazão: 20.930 linhas/s
+      * Rodada 49 removida -> Latência: 15.67s | Vazão: 15.621 linhas/s
+      * Rodada 50 removida -> Latência: 13.84s | Vazão: 17.688 linhas/s
+      * Rodada 58 removida -> Latência: 11.67s | Vazão: 20.974 linhas/s
+  Arquivo: sih_RD_SP_2024_05.parquet (Grupo RD | Mês 05)
+   -> Mantidas: 53/60 rodadas | Limites IQR: [4.13s a 5.14s]
+      * Rodada 5 removida -> Latência: 6.94s | Vazão: 35.513 linhas/s
+      * Rodada 6 removida -> Latência: 11.55s | Vazão: 21.337 linhas/s
+      * Rodada 17 removida -> Latência: 5.40s | Vazão: 45.638 linhas/s
+      * Rodada 37 removida -> Latência: 8.84s | Vazão: 27.883 linhas/s
+      * Rodada 48 removida -> Latência: 5.87s | Vazão: 41.959 linhas/s
+      * Rodada 50 removida -> Latência: 9.82s | Vazão: 25.093 linhas/s
+      * Rodada 58 removida -> Latência: 7.20s | Vazão: 34.215 linhas/s
+  Arquivo: sih_RD_SP_2024_06.parquet (Grupo RD | Mês 06)
+   -> Mantidas: 53/60 rodadas | Limites IQR: [3.96s a 5.05s]
+      * Rodada 1 removida -> Latência: 5.16s | Vazão: 46.654 linhas/s
+      * Rodada 6 removida -> Latência: 6.93s | Vazão: 34.695 linhas/s
+      * Rodada 7 removida -> Latência: 13.74s | Vazão: 17.508 linhas/s
+      * Rodada 31 removida -> Latência: 6.37s | Vazão: 37.748 linhas/s
+      * Rodada 37 removida -> Latência: 8.70s | Vazão: 27.654 linhas/s
+      * Rodada 38 removida -> Latência: 6.39s | Vazão: 37.636 linhas/s
+      * Rodada 47 removida -> Latência: 13.22s | Vazão: 18.196 linhas/s
+  Arquivo: sih_RD_SP_2024_07.parquet (Grupo RD | Mês 07)
+   -> Mantidas: 51/60 rodadas | Limites IQR: [4.03s a 5.09s]
+      * Rodada 9 removida -> Latência: 5.39s | Vazão: 44.820 linhas/s
+      * Rodada 17 removida -> Latência: 8.35s | Vazão: 28.926 linhas/s
+      * Rodada 31 removida -> Latência: 7.66s | Vazão: 31.542 linhas/s
+      * Rodada 38 removida -> Latência: 7.16s | Vazão: 33.747 linhas/s
+      * Rodada 41 removida -> Latência: 7.78s | Vazão: 31.042 linhas/s
+      * Rodada 50 removida -> Latência: 8.57s | Vazão: 28.187 linhas/s
+      * Rodada 56 removida -> Latência: 6.47s | Vazão: 37.314 linhas/s
+      * Rodada 59 removida -> Latência: 10.18s | Vazão: 23.712 linhas/s
+      * Rodada 60 removida -> Latência: 19.12s | Vazão: 12.631 linhas/s
+  Arquivo: sih_RD_SP_2024_08.parquet (Grupo RD | Mês 08)
+   -> Mantidas: 55/60 rodadas | Limites IQR: [1.47s a 9.59s]
+      * Rodada 5 removida -> Latência: 10.33s | Vazão: 23.825 linhas/s
+      * Rodada 18 removida -> Latência: 20.61s | Vazão: 11.942 linhas/s
+      * Rodada 21 removida -> Latência: 10.47s | Vazão: 23.496 linhas/s
+      * Rodada 31 removida -> Latência: 12.51s | Vazão: 19.670 linhas/s
+      * Rodada 50 removida -> Latência: 17.30s | Vazão: 14.224 linhas/s
+  Arquivo: sih_RD_SP_2024_09.parquet (Grupo RD | Mês 09)
+   -> Mantidas: 46/60 rodadas | Limites IQR: [3.28s a 6.20s]
+      * Rodada 5 removida -> Latência: 10.78s | Vazão: 22.270 linhas/s
+      * Rodada 7 removida -> Latência: 8.59s | Vazão: 27.963 linhas/s
+      * Rodada 13 removida -> Latência: 14.14s | Vazão: 16.977 linhas/s
+      * Rodada 15 removida -> Latência: 7.87s | Vazão: 30.512 linhas/s
+      * Rodada 17 removida -> Latência: 11.54s | Vazão: 20.803 linhas/s
+      * Rodada 20 removida -> Latência: 14.48s | Vazão: 16.580 linhas/s
+      * Rodada 23 removida -> Latência: 7.73s | Vazão: 31.058 linhas/s
+      * Rodada 33 removida -> Latência: 18.45s | Vazão: 13.014 linhas/s
+      * Rodada 40 removida -> Latência: 11.04s | Vazão: 21.742 linhas/s
+      * Rodada 42 removida -> Latência: 8.02s | Vazão: 29.921 linhas/s
+      * Rodada 46 removida -> Latência: 8.67s | Vazão: 27.699 linhas/s
+      * Rodada 55 removida -> Latência: 6.43s | Vazão: 37.328 linhas/s
+      * Rodada 56 removida -> Latência: 28.10s | Vazão: 8.543 linhas/s
+      * Rodada 59 removida -> Latência: 9.14s | Vazão: 26.278 linhas/s
+  Arquivo: sih_RD_SP_2024_10.parquet (Grupo RD | Mês 10)
+   -> Mantidas: 49/60 rodadas | Limites IQR: [4.22s a 5.38s]
+      * Rodada 8 removida -> Latência: 5.83s | Vazão: 42.883 linhas/s
+      * Rodada 15 removida -> Latência: 11.39s | Vazão: 21.968 linhas/s
+      * Rodada 17 removida -> Latência: 6.34s | Vazão: 39.422 linhas/s
+      * Rodada 23 removida -> Latência: 7.22s | Vazão: 34.660 linhas/s
+      * Rodada 24 removida -> Latência: 8.38s | Vazão: 29.858 linhas/s
+      * Rodada 26 removida -> Latência: 7.05s | Vazão: 35.470 linhas/s
+      * Rodada 40 removida -> Latência: 9.11s | Vazão: 27.443 linhas/s
+      * Rodada 42 removida -> Latência: 6.26s | Vazão: 39.987 linhas/s
+      * Rodada 46 removida -> Latência: 15.27s | Vazão: 16.385 linhas/s
+      * Rodada 54 removida -> Latência: 5.96s | Vazão: 41.966 linhas/s
+      * Rodada 59 removida -> Latência: 8.04s | Vazão: 31.111 linhas/s
+  Arquivo: sih_RD_SP_2024_11.parquet (Grupo RD | Mês 11)
+   -> Mantidas: 52/60 rodadas | Limites IQR: [3.92s a 4.95s]
+      * Rodada 2 removida -> Latência: 21.14s | Vazão: 11.088 linhas/s
+      * Rodada 9 removida -> Latência: 6.16s | Vazão: 38.036 linhas/s
+      * Rodada 11 removida -> Latência: 5.86s | Vazão: 40.002 linhas/s
+      * Rodada 23 removida -> Latência: 7.79s | Vazão: 30.074 linhas/s
+      * Rodada 24 removida -> Latência: 7.32s | Vazão: 32.032 linhas/s
+      * Rodada 26 removida -> Latência: 6.07s | Vazão: 38.617 linhas/s
+      * Rodada 34 removida -> Latência: 7.44s | Vazão: 31.509 linhas/s
+      * Rodada 50 removida -> Latência: 4.95s | Vazão: 47.317 linhas/s
+  Arquivo: sih_RD_SP_2024_12.parquet (Grupo RD | Mês 12)
+   -> Mantidas: 52/60 rodadas | Limites IQR: [3.81s a 4.70s]
+      * Rodada 9 removida -> Latência: 14.17s | Vazão: 15.937 linhas/s
+      * Rodada 11 removida -> Latência: 12.11s | Vazão: 18.638 linhas/s
+      * Rodada 13 removida -> Latência: 14.85s | Vazão: 15.203 linhas/s
+      * Rodada 22 removida -> Latência: 6.07s | Vazão: 37.202 linhas/s
+      * Rodada 23 removida -> Latência: 22.48s | Vazão: 10.041 linhas/s
+      * Rodada 28 removida -> Latência: 13.88s | Vazão: 16.270 linhas/s
+      * Rodada 34 removida -> Latência: 15.49s | Vazão: 14.571 linhas/s
+      * Rodada 50 removida -> Latência: 4.72s | Vazão: 47.845 linhas/s
+  Arquivo: sih_SP_SP_2024_01.parquet (Grupo SP | Mês 01)
+   -> Mantidas: 56/60 rodadas | Limites IQR: [13.99s a 44.46s]
+      * Rodada 8 removida -> Latência: 48.10s | Vazão: 75.633 linhas/s
+      * Rodada 22 removida -> Latência: 56.95s | Vazão: 63.875 linhas/s
+      * Rodada 48 removida -> Latência: 49.90s | Vazão: 72.896 linhas/s
+      * Rodada 58 removida -> Latência: 46.40s | Vazão: 78.401 linhas/s
+  Arquivo: sih_SP_SP_2024_02.parquet (Grupo SP | Mês 02)
+   -> Mantidas: 58/60 rodadas | Limites IQR: [7.98s a 54.69s]
+      * Rodada 19 removida -> Latência: 55.45s | Vazão: 65.538 linhas/s
+      * Rodada 35 removida -> Latência: 56.23s | Vazão: 64.621 linhas/s
+  Arquivo: sih_SP_SP_2024_03.parquet (Grupo SP | Mês 03)
+   -> Mantidas: 59/60 rodadas | Limites IQR: [9.12s a 58.79s]
+      * Rodada 32 removida -> Latência: 62.50s | Vazão: 62.667 linhas/s
+  Arquivo: sih_SP_SP_2024_04.parquet (Grupo SP | Mês 04)
+   -> Mantidas: 57/60 rodadas | Limites IQR: [12.90s a 52.29s]
+      * Rodada 9 removida -> Latência: 61.80s | Vazão: 63.588 linhas/s
+      * Rodada 46 removida -> Latência: 53.76s | Vazão: 73.103 linhas/s
+      * Rodada 60 removida -> Latência: 58.70s | Vazão: 66.947 linhas/s
+  Arquivo: sih_SP_SP_2024_06.parquet (Grupo SP | Mês 06)
+   -> Mantidas: 59/60 rodadas | Limites IQR: [12.10s a 54.22s]
+      * Rodada 13 removida -> Latência: 54.48s | Vazão: 71.381 linhas/s
+  Arquivo: sih_SP_SP_2024_08.parquet (Grupo SP | Mês 08)
+   -> Mantidas: 55/60 rodadas | Limites IQR: [15.50s a 51.04s]
+      * Rodada 19 removida -> Latência: 57.05s | Vazão: 70.653 linhas/s
+      * Rodada 24 removida -> Latência: 54.68s | Vazão: 73.703 linhas/s
+      * Rodada 25 removida -> Latência: 56.59s | Vazão: 71.224 linhas/s
+      * Rodada 46 removida -> Latência: 62.41s | Vazão: 64.583 linhas/s
+      * Rodada 48 removida -> Latência: 68.04s | Vazão: 59.236 linhas/s
+  Arquivo: sih_SP_SP_2024_09.parquet (Grupo SP | Mês 09)
+   -> Mantidas: 58/60 rodadas | Limites IQR: [9.68s a 58.36s]
+      * Rodada 8 removida -> Latência: 58.52s | Vazão: 66.842 linhas/s
+      * Rodada 40 removida -> Latência: 59.26s | Vazão: 66.009 linhas/s
+  Arquivo: sih_SP_SP_2024_11.parquet (Grupo SP | Mês 11)
+   -> Mantidas: 59/60 rodadas | Limites IQR: [6.03s a 64.79s]
+      * Rodada 54 removida -> Latência: 67.34s | Vazão: 57.542 linhas/s
+
+>>> BANCO: ClickHouse
+  Arquivo: sih_RD_SP_2024_01.parquet (Grupo RD | Mês 01)
+   -> Mantidas: 57/60 rodadas | Limites IQR: [3.15s a 3.60s]
+      * Rodada 43 removida -> Latência: 3.65s | Vazão: 60.975 linhas/s
+      * Rodada 48 removida -> Latência: 3.66s | Vazão: 60.930 linhas/s
+      * Rodada 50 removida -> Latência: 3.75s | Vazão: 59.389 linhas/s
+  Arquivo: sih_RD_SP_2024_02.parquet (Grupo RD | Mês 02)
+   -> Mantidas: 58/60 rodadas | Limites IQR: [3.17s a 3.62s]
+      * Rodada 8 removida -> Latência: 4.42s | Vazão: 50.013 linhas/s
+      * Rodada 50 removida -> Latência: 3.93s | Vazão: 56.265 linhas/s
+  Arquivo: sih_RD_SP_2024_03.parquet (Grupo RD | Mês 03)
+   -> Mantidas: 55/60 rodadas | Limites IQR: [3.43s a 3.90s]
+      * Rodada 1 removida -> Latência: 3.97s | Vazão: 60.971 linhas/s
+      * Rodada 25 removida -> Latência: 4.40s | Vazão: 54.901 linhas/s
+      * Rodada 45 removida -> Latência: 11.48s | Vazão: 21.063 linhas/s
+      * Rodada 47 removida -> Latência: 3.91s | Vazão: 61.918 linhas/s
+      * Rodada 50 removida -> Latência: 4.34s | Vazão: 55.686 linhas/s
+  Arquivo: sih_RD_SP_2024_04.parquet (Grupo RD | Mês 04)
+   -> Mantidas: 57/60 rodadas | Limites IQR: [3.54s a 3.91s]
+      * Rodada 1 removida -> Latência: 4.08s | Vazão: 60.035 linhas/s
+      * Rodada 21 removida -> Latência: 3.94s | Vazão: 62.147 linhas/s
+      * Rodada 50 removida -> Latência: 4.13s | Vazão: 59.298 linhas/s
+  Arquivo: sih_RD_SP_2024_05.parquet (Grupo RD | Mês 05)
+   -> Mantidas: 54/60 rodadas | Limites IQR: [3.57s a 3.91s]
+      * Rodada 14 removida -> Latência: 3.56s | Vazão: 69.295 linhas/s
+      * Rodada 16 removida -> Latência: 3.56s | Vazão: 69.246 linhas/s
+      * Rodada 19 removida -> Latência: 3.92s | Vazão: 62.937 linhas/s
+      * Rodada 25 removida -> Latência: 4.05s | Vazão: 60.862 linhas/s
+      * Rodada 50 removida -> Latência: 3.92s | Vazão: 62.818 linhas/s
+      * Rodada 52 removida -> Latência: 3.98s | Vazão: 61.952 linhas/s
+  Arquivo: sih_RD_SP_2024_06.parquet (Grupo RD | Mês 06)
+   -> Mantidas: 56/60 rodadas | Limites IQR: [3.56s a 3.93s]
+      * Rodada 37 removida -> Latência: 4.03s | Vazão: 59.684 linhas/s
+      * Rodada 41 removida -> Latência: 4.15s | Vazão: 57.982 linhas/s
+      * Rodada 50 removida -> Latência: 3.95s | Vazão: 60.956 linhas/s
+      * Rodada 55 removida -> Latência: 3.95s | Vazão: 60.928 linhas/s
+  Arquivo: sih_RD_SP_2024_07.parquet (Grupo RD | Mês 07)
+   -> Mantidas: 56/60 rodadas | Limites IQR: [3.45s a 3.90s]
+      * Rodada 11 removida -> Latência: 6.62s | Vazão: 36.454 linhas/s
+      * Rodada 31 removida -> Latência: 4.12s | Vazão: 58.547 linhas/s
+      * Rodada 33 removida -> Latência: 3.94s | Vazão: 61.279 linhas/s
+      * Rodada 38 removida -> Latência: 6.36s | Vazão: 37.986 linhas/s
+  Arquivo: sih_RD_SP_2024_08.parquet (Grupo RD | Mês 08)
+   -> Mantidas: 57/60 rodadas | Limites IQR: [3.38s a 3.90s]
+      * Rodada 7 removida -> Latência: 4.47s | Vazão: 55.040 linhas/s
+      * Rodada 33 removida -> Latência: 4.32s | Vazão: 56.982 linhas/s
+      * Rodada 50 removida -> Latência: 4.10s | Vazão: 60.034 linhas/s
+  Arquivo: sih_RD_SP_2024_09.parquet (Grupo RD | Mês 09)
+   -> Mantidas: 58/60 rodadas | Limites IQR: [3.39s a 3.79s]
+      * Rodada 50 removida -> Latência: 3.91s | Vazão: 61.350 linhas/s
+      * Rodada 59 removida -> Latência: 6.09s | Vazão: 39.414 linhas/s
+  Arquivo: sih_RD_SP_2024_10.parquet (Grupo RD | Mês 10)
+   -> Mantidas: 58/60 rodadas | Limites IQR: [3.59s a 4.07s]
+      * Rodada 42 removida -> Latência: 6.65s | Vazão: 37.639 linhas/s
+      * Rodada 50 removida -> Latência: 4.20s | Vazão: 59.561 linhas/s
+  Arquivo: sih_RD_SP_2024_11.parquet (Grupo RD | Mês 11)
+   -> Mantidas: 56/60 rodadas | Limites IQR: [3.37s a 3.72s]
+      * Rodada 12 removida -> Latência: 3.35s | Vazão: 69.977 linhas/s
+      * Rodada 24 removida -> Latência: 3.77s | Vazão: 62.189 linhas/s
+      * Rodada 47 removida -> Latência: 3.80s | Vazão: 61.649 linhas/s
+      * Rodada 50 removida -> Latência: 3.92s | Vazão: 59.732 linhas/s
+  Arquivo: sih_RD_SP_2024_12.parquet (Grupo RD | Mês 12)
+   -> Mantidas: 57/60 rodadas | Limites IQR: [3.15s a 3.56s]
+      * Rodada 13 removida -> Latência: 9.71s | Vazão: 23.248 linhas/s
+      * Rodada 50 removida -> Latência: 3.73s | Vazão: 60.526 linhas/s
+      * Rodada 51 removida -> Latência: 9.40s | Vazão: 24.009 linhas/s
+  Arquivo: sih_SP_SP_2024_01.parquet (Grupo SP | Mês 01)
+   -> Mantidas: 52/60 rodadas | Limites IQR: [21.31s a 21.92s]
+      * Rodada 1 removida -> Latência: 22.19s | Vazão: 163.904 linhas/s
+      * Rodada 11 removida -> Latência: 21.28s | Vazão: 170.909 linhas/s
+      * Rodada 16 removida -> Latência: 22.76s | Vazão: 159.861 linhas/s
+      * Rodada 25 removida -> Latência: 28.62s | Vazão: 127.090 linhas/s
+      * Rodada 31 removida -> Latência: 22.29s | Vazão: 163.208 linhas/s
+      * Rodada 50 removida -> Latência: 22.61s | Vazão: 160.890 linhas/s
+      * Rodada 53 removida -> Latência: 23.94s | Vazão: 151.963 linhas/s
+      * Rodada 57 removida -> Latência: 24.30s | Vazão: 149.676 linhas/s
+  Arquivo: sih_SP_SP_2024_02.parquet (Grupo SP | Mês 02)
+   -> Mantidas: 50/60 rodadas | Limites IQR: [21.00s a 22.68s]
+      * Rodada 5 removida -> Latência: 22.94s | Vazão: 158.442 linhas/s
+      * Rodada 7 removida -> Latência: 30.28s | Vazão: 120.001 linhas/s
+      * Rodada 10 removida -> Latência: 25.12s | Vazão: 144.661 linhas/s
+      * Rodada 15 removida -> Latência: 34.91s | Vazão: 104.095 linhas/s
+      * Rodada 17 removida -> Latência: 34.12s | Vazão: 106.517 linhas/s
+      * Rodada 19 removida -> Latência: 28.10s | Vazão: 129.341 linhas/s
+      * Rodada 24 removida -> Latência: 15.96s | Vazão: 227.751 linhas/s
+      * Rodada 37 removida -> Latência: 22.87s | Vazão: 158.915 linhas/s
+      * Rodada 41 removida -> Latência: 25.13s | Vazão: 144.622 linhas/s
+      * Rodada 50 removida -> Latência: 24.89s | Vazão: 145.977 linhas/s
+  Arquivo: sih_SP_SP_2024_03.parquet (Grupo SP | Mês 03)
+   -> Mantidas: 51/60 rodadas | Limites IQR: [23.11s a 23.96s]
+      * Rodada 1 removida -> Latência: 24.05s | Vazão: 162.829 linhas/s
+      * Rodada 3 removida -> Latência: 31.60s | Vazão: 123.958 linhas/s
+      * Rodada 25 removida -> Latência: 24.26s | Vazão: 161.448 linhas/s
+      * Rodada 30 removida -> Latência: 33.43s | Vazão: 117.145 linhas/s
+      * Rodada 37 removida -> Latência: 25.03s | Vazão: 156.470 linhas/s
+      * Rodada 43 removida -> Latência: 43.22s | Vazão: 90.616 linhas/s
+      * Rodada 46 removida -> Latência: 24.91s | Vazão: 157.226 linhas/s
+      * Rodada 54 removida -> Latência: 29.16s | Vazão: 134.333 linhas/s
+      * Rodada 57 removida -> Latência: 26.51s | Vazão: 147.730 linhas/s
+  Arquivo: sih_SP_SP_2024_04.parquet (Grupo SP | Mês 04)
+   -> Mantidas: 52/60 rodadas | Limites IQR: [23.09s a 24.38s]
+      * Rodada 1 removida -> Latência: 25.53s | Vazão: 153.942 linhas/s
+      * Rodada 17 removida -> Latência: 27.83s | Vazão: 141.197 linhas/s
+      * Rodada 22 removida -> Latência: 27.93s | Vazão: 140.694 linhas/s
+      * Rodada 31 removida -> Latência: 24.66s | Vazão: 159.366 linhas/s
+      * Rodada 41 removida -> Latência: 46.54s | Vazão: 84.434 linhas/s
+      * Rodada 47 removida -> Latência: 37.76s | Vazão: 104.070 linhas/s
+      * Rodada 52 removida -> Latência: 31.35s | Vazão: 125.355 linhas/s
+      * Rodada 58 removida -> Latência: 28.77s | Vazão: 136.592 linhas/s
+  Arquivo: sih_SP_SP_2024_05.parquet (Grupo SP | Mês 05)
+   -> Mantidas: 48/60 rodadas | Limites IQR: [23.51s a 24.52s]
+      * Rodada 1 removida -> Latência: 25.86s | Vazão: 155.179 linhas/s
+      * Rodada 2 removida -> Latência: 29.24s | Vazão: 137.224 linhas/s
+      * Rodada 13 removida -> Latência: 25.47s | Vazão: 157.575 linhas/s
+      * Rodada 18 removida -> Latência: 25.91s | Vazão: 154.872 linhas/s
+      * Rodada 20 removida -> Latência: 24.76s | Vazão: 162.084 linhas/s
+      * Rodada 32 removida -> Latência: 24.55s | Vazão: 163.481 linhas/s
+      * Rodada 36 removida -> Latência: 25.03s | Vazão: 160.289 linhas/s
+      * Rodada 39 removida -> Latência: 28.89s | Vazão: 138.903 linhas/s
+      * Rodada 48 removida -> Latência: 66.91s | Vazão: 59.973 linhas/s
+      * Rodada 54 removida -> Latência: 24.85s | Vazão: 161.466 linhas/s
+      * Rodada 58 removida -> Latência: 30.47s | Vazão: 131.673 linhas/s
+      * Rodada 59 removida -> Latência: 34.13s | Vazão: 117.582 linhas/s
+  Arquivo: sih_SP_SP_2024_06.parquet (Grupo SP | Mês 06)
+   -> Mantidas: 55/60 rodadas | Limites IQR: [20.38s a 27.80s]
+      * Rodada 8 removida -> Latência: 29.61s | Vazão: 131.343 linhas/s
+      * Rodada 21 removida -> Latência: 29.06s | Vazão: 133.817 linhas/s
+      * Rodada 23 removida -> Latência: 41.03s | Vazão: 94.766 linhas/s
+      * Rodada 43 removida -> Latência: 27.88s | Vazão: 139.491 linhas/s
+      * Rodada 49 removida -> Latência: 30.62s | Vazão: 126.999 linhas/s
+  Arquivo: sih_SP_SP_2024_07.parquet (Grupo SP | Mês 07)
+   -> Mantidas: 48/60 rodadas | Limites IQR: [23.94s a 25.00s]
+      * Rodada 1 removida -> Latência: 29.28s | Vazão: 135.198 linhas/s
+      * Rodada 2 removida -> Latência: 26.85s | Vazão: 147.426 linhas/s
+      * Rodada 15 removida -> Latência: 23.45s | Vazão: 168.818 linhas/s
+      * Rodada 18 removida -> Latência: 25.11s | Vazão: 157.606 linhas/s
+      * Rodada 29 removida -> Latência: 34.73s | Vazão: 113.960 linhas/s
+      * Rodada 30 removida -> Latência: 25.05s | Vazão: 158.033 linhas/s
+      * Rodada 35 removida -> Latência: 38.26s | Vazão: 103.441 linhas/s
+      * Rodada 37 removida -> Latência: 40.57s | Vazão: 97.555 linhas/s
+      * Rodada 42 removida -> Latência: 34.82s | Vazão: 113.676 linhas/s
+      * Rodada 48 removida -> Latência: 26.86s | Vazão: 147.361 linhas/s
+      * Rodada 56 removida -> Latência: 25.23s | Vazão: 156.850 linhas/s
+      * Rodada 58 removida -> Latência: 32.41s | Vazão: 122.108 linhas/s
+  Arquivo: sih_SP_SP_2024_08.parquet (Grupo SP | Mês 08)
+   -> Mantidas: 55/60 rodadas | Limites IQR: [23.63s a 24.79s]
+      * Rodada 7 removida -> Latência: 26.18s | Vazão: 153.946 linhas/s
+      * Rodada 28 removida -> Latência: 34.25s | Vazão: 117.677 linhas/s
+      * Rodada 45 removida -> Latência: 36.16s | Vazão: 111.453 linhas/s
+      * Rodada 47 removida -> Latência: 33.82s | Vazão: 119.173 linhas/s
+      * Rodada 50 removida -> Latência: 28.51s | Vazão: 141.387 linhas/s
+  Arquivo: sih_SP_SP_2024_09.parquet (Grupo SP | Mês 09)
+   -> Mantidas: 53/60 rodadas | Limites IQR: [23.09s a 23.98s]
+      * Rodada 6 removida -> Latência: 24.06s | Vazão: 162.552 linhas/s
+      * Rodada 23 removida -> Latência: 24.00s | Vazão: 162.992 linhas/s
+      * Rodada 32 removida -> Latência: 26.70s | Vazão: 146.510 linhas/s
+      * Rodada 36 removida -> Latência: 26.71s | Vazão: 146.420 linhas/s
+      * Rodada 39 removida -> Latência: 24.10s | Vazão: 162.282 linhas/s
+      * Rodada 43 removida -> Latência: 27.97s | Vazão: 139.862 linhas/s
+      * Rodada 49 removida -> Latência: 24.49s | Vazão: 159.693 linhas/s
+  Arquivo: sih_SP_SP_2024_10.parquet (Grupo SP | Mês 10)
+   -> Mantidas: 54/60 rodadas | Limites IQR: [23.94s a 25.26s]
+      * Rodada 1 removida -> Latência: 29.69s | Vazão: 137.344 linhas/s
+      * Rodada 3 removida -> Latência: 28.88s | Vazão: 141.195 linhas/s
+      * Rodada 22 removida -> Latência: 28.58s | Vazão: 142.674 linhas/s
+      * Rodada 29 removida -> Latência: 26.15s | Vazão: 155.932 linhas/s
+      * Rodada 34 removida -> Latência: 27.89s | Vazão: 146.206 linhas/s
+      * Rodada 38 removida -> Latência: 28.57s | Vazão: 142.756 linhas/s
+  Arquivo: sih_SP_SP_2024_11.parquet (Grupo SP | Mês 11)
+   -> Mantidas: 50/60 rodadas | Limites IQR: [21.86s a 25.02s]
+      * Rodada 4 removida -> Latência: 25.64s | Vazão: 151.134 linhas/s
+      * Rodada 5 removida -> Latência: 28.86s | Vazão: 134.297 linhas/s
+      * Rodada 6 removida -> Latência: 29.67s | Vazão: 130.629 linhas/s
+      * Rodada 10 removida -> Latência: 26.49s | Vazão: 146.283 linhas/s
+      * Rodada 21 removida -> Latência: 34.78s | Vazão: 111.411 linhas/s
+      * Rodada 23 removida -> Latência: 31.12s | Vazão: 124.513 linhas/s
+      * Rodada 37 removida -> Latência: 25.77s | Vazão: 150.371 linhas/s
+      * Rodada 47 removida -> Latência: 38.11s | Vazão: 101.695 linhas/s
+      * Rodada 59 removida -> Latência: 31.22s | Vazão: 124.117 linhas/s
+      * Rodada 60 removida -> Latência: 26.57s | Vazão: 145.847 linhas/s
+  Arquivo: sih_SP_SP_2024_12.parquet (Grupo SP | Mês 12)
+   -> Mantidas: 49/60 rodadas | Limites IQR: [20.40s a 26.37s]
+      * Rodada 6 removida -> Latência: 28.87s | Vazão: 130.839 linhas/s
+      * Rodada 7 removida -> Latência: 28.38s | Vazão: 133.091 linhas/s
+      * Rodada 8 removida -> Latência: 33.15s | Vazão: 113.919 linhas/s
+      * Rodada 16 removida -> Latência: 29.06s | Vazão: 129.972 linhas/s
+      * Rodada 22 removida -> Latência: 27.17s | Vazão: 139.014 linhas/s
+      * Rodada 24 removida -> Latência: 38.11s | Vazão: 99.107 linhas/s
+      * Rodada 30 removida -> Latência: 26.87s | Vazão: 140.545 linhas/s
+      * Rodada 35 removida -> Latência: 34.24s | Vazão: 110.297 linhas/s
+      * Rodada 36 removida -> Latência: 31.13s | Vazão: 121.316 linhas/s
+      * Rodada 42 removida -> Latência: 27.94s | Vazão: 135.176 linhas/s
+      * Rodada 57 removida -> Latência: 26.84s | Vazão: 140.745 linhas/s
+
+
+======================================================================
+2. MÉDIAS GERAIS POR BANCO E GRUPO (Base Limpa / Sem Outliers)
+======================================================================
 
 [ClickHouse] - Grupo RD
- -> Latência (segundos):   3.31   (± 0.09)
- -> Vazão (linhas/seg):   71.818  (± 2.041)
- -> Consumo CPU (%):      13.40   (± 1.99)
- -> Pico RAM (%):         68.18   (± 4.62)
+ -> Latência (segundos):   3.60   (± 0.17)
+ -> Vazão (linhas/seg):   66.094  (± 1.603)
+ -> Consumo CPU (%):      14.81   (± 2.51)
+ -> Pico RAM (%):         62.33   (± 5.33)
 
 [ClickHouse] - Grupo SP
- -> Latência (segundos):  13.82   (± 0.59)
- -> Vazão (linhas/seg):  281.422  (± 5.522)
- -> Consumo CPU (%):      15.32   (± 1.82)
- -> Pico RAM (%):         79.55   (± 2.88)
+ -> Latência (segundos):  23.46   (± 1.00)
+ -> Vazão (linhas/seg):  165.843  (± 3.373)
+ -> Consumo CPU (%):      13.20   (± 1.50)
+ -> Pico RAM (%):         77.87   (± 3.67)
 
 [PostgreSQL] - Grupo RD
- -> Latência (segundos):  76.66   (± 3.38)
- -> Vazão (linhas/seg):   3.106   (± 80)
- -> Consumo CPU (%):       9.51   (± 0.83)
- -> Pico RAM (%):         68.95   (± 4.40)
+ -> Latência (segundos):   4.52   (± 0.53)
+ -> Vazão (linhas/seg):   53.072  (± 3.453)
+ -> Consumo CPU (%):      14.19   (± 2.79)
+ -> Pico RAM (%):         62.77   (± 5.52)
 
 [PostgreSQL] - Grupo SP
- -> Latência (segundos):  352.44  (± 13.33)
- -> Vazão (linhas/seg):   11.032  (± 107)
- -> Consumo CPU (%):       9.81   (± 0.44)
- -> Pico RAM (%):         79.99   (± 3.65)
+ -> Latência (segundos):  34.56   (± 9.00)
+ -> Vazão (linhas/seg):  118.815  (± 24.853)
+ -> Consumo CPU (%):      11.86   (± 2.58)
+ -> Pico RAM (%):         90.94   (± 3.80)
 
 
-============================================================
-2. MÉDIAS DETALHADAS POR MÊS
-============================================================
+======================================================================
+3. MÉDIAS DETALHADAS POR MÊS (Base Limpa)
+======================================================================
 
 --- PostgreSQL | Grupo RD ---
- Mês 01: Latência =  72.95s | Vazão =      3.060 linhas/s
- Mês 02: Latência =  72.07s | Vazão =      3.072 linhas/s
- Mês 03: Latência =  78.07s | Vazão =      3.100 linhas/s
- Mês 04: Latência =  78.79s | Vazão =      3.110 linhas/s
- Mês 05: Latência =  79.46s | Vazão =      3.104 linhas/s
- Mês 06: Latência =  77.39s | Vazão =      3.110 linhas/s
- Mês 07: Latência =  78.14s | Vazão =      3.091 linhas/s
- Mês 08: Latência =  78.97s | Vazão =      3.117 linhas/s
- Mês 09: Latência =  77.25s | Vazão =      3.109 linhas/s
- Mês 10: Latência =  79.61s | Vazão =      3.143 linhas/s
- Mês 11: Latência =  74.93s | Vazão =      3.129 linhas/s
- Mês 12: Latência =  72.29s | Vazão =      3.125 linhas/s
+ Mês 01: Latência =   4.19s | Vazão =     53.224 linhas/s
+ Mês 02: Latência =   4.13s | Vazão =     53.574 linhas/s
+ Mês 03: Latência =   4.51s | Vazão =     53.671 linhas/s
+ Mês 04: Latência =   4.59s | Vazão =     53.369 linhas/s
+ Mês 05: Latência =   4.59s | Vazão =     53.710 linhas/s
+ Mês 06: Latência =   4.49s | Vazão =     53.632 linhas/s
+ Mês 07: Latência =   4.52s | Vazão =     53.462 linhas/s
+ Mês 08: Latência =   5.25s | Vazão =     49.335 linhas/s
+ Mês 09: Latência =   4.49s | Vazão =     53.544 linhas/s
+ Mês 10: Latência =   4.76s | Vazão =     52.653 linhas/s
+ Mês 11: Latência =   4.39s | Vazão =     53.454 linhas/s
+ Mês 12: Latência =   4.22s | Vazão =     53.518 linhas/s
 
 --- PostgreSQL | Grupo SP ---
- Mês 01: Latência = 326.56s | Vazão =     11.142 linhas/s
- Mês 02: Latência = 328.89s | Vazão =     11.050 linhas/s
- Mês 03: Latência = 354.44s | Vazão =     11.051 linhas/s
- Mês 04: Latência = 355.42s | Vazão =     11.057 linhas/s
- Mês 05: Latência = 364.20s | Vazão =     11.018 linhas/s
- Mês 06: Latência = 351.83s | Vazão =     11.053 linhas/s
- Mês 07: Latência = 359.29s | Vazão =     11.018 linhas/s
- Mês 08: Latência = 365.05s | Vazão =     11.042 linhas/s
- Mês 09: Latência = 356.36s | Vazão =     10.977 linhas/s
- Mês 10: Latência = 370.31s | Vazão =     11.014 linhas/s
- Mês 11: Latência = 354.15s | Vazão =     10.943 linhas/s
- Mês 12: Latência = 342.73s | Vazão =     11.021 linhas/s
+ Mês 01: Latência =  29.03s | Vazão =    128.687 linhas/s
+ Mês 02: Latência =  30.86s | Vazão =    123.311 linhas/s
+ Mês 03: Latência =  34.86s | Vazão =    118.561 linhas/s
+ Mês 04: Latência =  32.29s | Vazão =    126.173 linhas/s
+ Mês 05: Latência =  37.15s | Vazão =    114.471 linhas/s
+ Mês 06: Latência =  34.31s | Vazão =    119.080 linhas/s
+ Mês 07: Latência =  37.25s | Vazão =    113.294 linhas/s
+ Mês 08: Latência =  32.63s | Vazão =    126.413 linhas/s
+ Mês 09: Latência =  34.21s | Vazão =    120.751 linhas/s
+ Mês 10: Latência =  37.89s | Vazão =    113.350 linhas/s
+ Mês 11: Latência =  35.52s | Vazão =    115.686 linhas/s
+ Mês 12: Latência =  37.94s | Vazão =    107.821 linhas/s
 
 --- ClickHouse | Grupo RD ---
- Mês 01: Latência =   3.24s | Vazão =     68.852 linhas/s
- Mês 02: Latência =   3.19s | Vazão =     69.371 linhas/s
- Mês 03: Latência =   3.37s | Vazão =     71.790 linhas/s
- Mês 04: Latência =   3.37s | Vazão =     72.708 linhas/s
- Mês 05: Latência =   3.38s | Vazão =     72.819 linhas/s
- Mês 06: Latência =   3.31s | Vazão =     72.634 linhas/s
- Mês 07: Latência =   3.32s | Vazão =     72.872 linhas/s
- Mês 08: Latência =   3.36s | Vazão =     73.318 linhas/s
- Mês 09: Latência =   3.32s | Vazão =     72.236 linhas/s
- Mês 10: Latência =   3.40s | Vazão =     73.539 linhas/s
- Mês 11: Latência =   3.28s | Vazão =     71.392 linhas/s
- Mês 12: Latência =   3.21s | Vazão =     70.288 linhas/s
+ Mês 01: Latência =   3.37s | Vazão =     66.092 linhas/s
+ Mês 02: Latência =   3.38s | Vazão =     65.348 linhas/s
+ Mês 03: Latência =   3.66s | Vazão =     66.020 linhas/s
+ Mês 04: Latência =   3.72s | Vazão =     65.771 linhas/s
+ Mês 05: Latência =   3.73s | Vazão =     66.036 linhas/s
+ Mês 06: Latência =   3.75s | Vazão =     64.240 linhas/s
+ Mês 07: Latência =   3.67s | Vazão =     65.918 linhas/s
+ Mês 08: Latência =   3.63s | Vazão =     67.741 linhas/s
+ Mês 09: Latência =   3.59s | Vazão =     66.956 linhas/s
+ Mês 10: Latência =   3.83s | Vazão =     65.334 linhas/s
+ Mês 11: Latência =   3.54s | Vazão =     66.172 linhas/s
+ Mês 12: Latência =   3.35s | Vazão =     67.477 linhas/s
 
 --- ClickHouse | Grupo SP ---
- Mês 01: Latência =  12.84s | Vazão =    283.462 linhas/s
- Mês 02: Latência =  12.81s | Vazão =    283.737 linhas/s
- Mês 03: Latência =  13.79s | Vazão =    284.079 linhas/s
- Mês 04: Latência =  13.93s | Vazão =    282.144 linhas/s
- Mês 05: Latência =  14.43s | Vazão =    278.197 linhas/s
- Mês 06: Latência =  13.71s | Vazão =    283.879 linhas/s
- Mês 07: Latência =  14.01s | Vazão =    282.511 linhas/s
- Mês 08: Latência =  14.20s | Vazão =    283.870 linhas/s
- Mês 09: Latência =  14.31s | Vazão =    273.332 linhas/s
- Mês 10: Latência =  14.58s | Vazão =    279.722 linhas/s
- Mês 11: Latência =  13.75s | Vazão =    281.995 linhas/s
- Mês 12: Latência =  13.49s | Vazão =    280.129 linhas/s
+ Mês 01: Latência =  21.61s | Vazão =    168.368 linhas/s
+ Mês 02: Latência =  21.79s | Vazão =    166.770 linhas/s
+ Mês 03: Latência =  23.49s | Vazão =    166.724 linhas/s
+ Mês 04: Latência =  23.69s | Vazão =    165.907 linhas/s
+ Mês 05: Latência =  23.95s | Vazão =    167.522 linhas/s
+ Mês 06: Latência =  23.92s | Vazão =    162.937 linhas/s
+ Mês 07: Latência =  24.42s | Vazão =    162.098 linhas/s
+ Mês 08: Latência =  24.19s | Vazão =    166.591 linhas/s
+ Mês 09: Latência =  23.50s | Vazão =    166.440 linhas/s
+ Mês 10: Latência =  24.56s | Vazão =    166.040 linhas/s
+ Mês 11: Latência =  23.30s | Vazão =    166.360 linhas/s
+ Mês 12: Latência =  23.01s | Vazão =    164.288 linhas/s
