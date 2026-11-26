@@ -1,0 +1,1004 @@
+===============================================================================================
+ RELATÓRIO ESTATÍSTICO E LIMPEZA DE OUTLIERS - CONSULTAS (SIH-SUS)
+===============================================================================================
+
+1. RELATÓRIO DE REMOÇÃO DE OUTLIERS (MÉTODO IQR POR BANCO E QUERY)
+-----------------------------------------------------------------------------------------------
+Total de execuções válidas originais: 11880 | Mantidas: 11381 | Removidas: 499
+
+>>> BANCO: PostgreSQL (Sem Índices)
+  Query Q02 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.1067s a 0.1508s]
+    * Rodada 45 removida -> Latência: 0.1513s | CPU Média: 32.87%
+    * Rodada 51 removida -> Latência: 0.1749s | CPU Média: 35.35%
+    * Rodada 57 removida -> Latência: 0.1558s | CPU Média: 32.08%
+    * Rodada 79 removida -> Latência: 0.1054s | CPU Média: 28.00%
+  Query Q03 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 81/90 rodadas mantidas | Limites IQR: [3.5789s a 4.6394s]
+    * Rodada 7 removida -> Latência: 4.7093s | CPU Média: 17.69%
+    * Rodada 8 removida -> Latência: 4.8910s | CPU Média: 14.98%
+    * Rodada 10 removida -> Latência: 4.7165s | CPU Média: 16.20%
+    * Rodada 26 removida -> Latência: 5.0467s | CPU Média: 17.54%
+    * Rodada 37 removida -> Latência: 4.8038s | CPU Média: 19.39%
+    * Rodada 50 removida -> Latência: 4.8405s | CPU Média: 17.99%
+    * Rodada 55 removida -> Latência: 5.2048s | CPU Média: 17.54%
+    * Rodada 59 removida -> Latência: 4.6908s | CPU Média: 23.08%
+    * Rodada 62 removida -> Latência: 4.6645s | CPU Média: 15.88%
+  Query Q04 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [3.6718s a 4.6913s]
+    * Rodada 36 removida -> Latência: 4.6919s | CPU Média: 18.28%
+    * Rodada 40 removida -> Latência: 4.7193s | CPU Média: 27.29%
+  Query Q05 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [3.5080s a 4.6878s]
+    * Rodada 59 removida -> Latência: 4.7893s | CPU Média: 17.85%
+  Query Q06 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [3.6716s a 4.6368s]
+    * Rodada 10 removida -> Latência: 4.7382s | CPU Média: 14.53%
+    * Rodada 11 removida -> Latência: 4.7403s | CPU Média: 15.28%
+    * Rodada 52 removida -> Latência: 9.8970s | CPU Média: 9.69%
+    * Rodada 55 removida -> Latência: 4.6936s | CPU Média: 15.22%
+    * Rodada 62 removida -> Latência: 4.6477s | CPU Média: 16.89%
+    * Rodada 80 removida -> Latência: 4.6656s | CPU Média: 17.01%
+  Query Q07 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [3.5150s a 4.9427s]
+    * Rodada 51 removida -> Latência: 4.9755s | CPU Média: 24.27%
+    * Rodada 84 removida -> Latência: 5.1470s | CPU Média: 14.40%
+  Query Q08 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [3.5334s a 4.8118s]
+    * Rodada 50 removida -> Latência: 4.9846s | CPU Média: 18.77%
+    * Rodada 55 removida -> Latência: 5.0671s | CPU Média: 13.86%
+    * Rodada 61 removida -> Latência: 5.0128s | CPU Média: 13.03%
+    * Rodada 89 removida -> Latência: 4.8137s | CPU Média: 14.58%
+  Query Q09 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [3.5774s a 4.8418s]
+    * Rodada 10 removida -> Latência: 5.9371s | CPU Média: 14.33%
+    * Rodada 26 removida -> Latência: 4.8532s | CPU Média: 12.40%
+  Query Q10 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [3.6373s a 4.7812s]
+    * Rodada 12 removida -> Latência: 5.1184s | CPU Média: 17.08%
+  Query Q11 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [3.6832s a 4.7243s]
+    * Rodada 7 removida -> Latência: 4.8257s | CPU Média: 14.88%
+    * Rodada 10 removida -> Latência: 4.7327s | CPU Média: 16.68%
+    * Rodada 37 removida -> Latência: 5.0702s | CPU Média: 16.23%
+    * Rodada 66 removida -> Latência: 4.8272s | CPU Média: 13.36%
+    * Rodada 78 removida -> Latência: 4.8046s | CPU Média: 13.42%
+    * Rodada 88 removida -> Latência: 4.7851s | CPU Média: 13.75%
+  Query Q13 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [3.7004s a 4.9046s]
+    * Rodada 5 removida -> Latência: 4.9577s | CPU Média: 16.64%
+  Query Q14 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [6.2754s a 7.2361s]
+    * Rodada 2 removida -> Latência: 7.2892s | CPU Média: 17.38%
+    * Rodada 7 removida -> Latência: 7.6542s | CPU Média: 13.99%
+    * Rodada 52 removida -> Latência: 7.5735s | CPU Média: 11.55%
+    * Rodada 53 removida -> Latência: 7.4580s | CPU Média: 10.86%
+    * Rodada 64 removida -> Latência: 7.3581s | CPU Média: 12.71%
+    * Rodada 88 removida -> Latência: 7.8839s | CPU Média: 14.18%
+  Query Q15 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [7.7340s a 167.7284s]
+    * Rodada 66 removida -> Latência: 182.7777s | CPU Média: 10.97%
+    * Rodada 76 removida -> Latência: 190.5058s | CPU Média: 8.53%
+  Query Q16 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [3.8892s a 4.3021s]
+    * Rodada 7 removida -> Latência: 4.3065s | CPU Média: 21.98%
+    * Rodada 37 removida -> Latência: 4.4426s | CPU Média: 19.87%
+    * Rodada 61 removida -> Latência: 4.5505s | CPU Média: 14.75%
+    * Rodada 66 removida -> Latência: 5.5409s | CPU Média: 20.19%
+  Query Q17 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [3.6326s a 4.7423s]
+    * Rodada 66 removida -> Latência: 5.1753s | CPU Média: 22.28%
+  Query Q18 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 81/90 rodadas mantidas | Limites IQR: [3.4604s a 4.3708s]
+    * Rodada 5 removida -> Latência: 4.3974s | CPU Média: 17.03%
+    * Rodada 39 removida -> Latência: 4.4339s | CPU Média: 16.32%
+    * Rodada 47 removida -> Latência: 4.4915s | CPU Média: 20.57%
+    * Rodada 56 removida -> Latência: 4.3792s | CPU Média: 17.29%
+    * Rodada 61 removida -> Latência: 4.5999s | CPU Média: 17.51%
+    * Rodada 65 removida -> Latência: 4.8851s | CPU Média: 22.20%
+    * Rodada 66 removida -> Latência: 4.9851s | CPU Média: 29.79%
+    * Rodada 83 removida -> Latência: 4.5706s | CPU Média: 17.90%
+    * Rodada 89 removida -> Latência: 4.6704s | CPU Média: 19.58%
+  Query Q19 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 81/90 rodadas mantidas | Limites IQR: [16.4993s a 18.0712s]
+    * Rodada 5 removida -> Latência: 19.4587s | CPU Média: 14.36%
+    * Rodada 16 removida -> Latência: 18.7455s | CPU Média: 14.39%
+    * Rodada 52 removida -> Latência: 18.2595s | CPU Média: 14.84%
+    * Rodada 65 removida -> Latência: 19.4893s | CPU Média: 14.72%
+    * Rodada 66 removida -> Latência: 21.8257s | CPU Média: 21.63%
+    * Rodada 75 removida -> Latência: 18.1786s | CPU Média: 15.65%
+    * Rodada 76 removida -> Latência: 18.6420s | CPU Média: 16.22%
+    * Rodada 87 removida -> Latência: 19.0126s | CPU Média: 14.25%
+    * Rodada 89 removida -> Latência: 18.3883s | CPU Média: 14.63%
+  Query Q20 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [3.8363s a 4.3061s]
+    * Rodada 22 removida -> Latência: 4.3125s | CPU Média: 24.33%
+    * Rodada 61 removida -> Latência: 4.3073s | CPU Média: 17.97%
+    * Rodada 75 removida -> Latência: 4.3441s | CPU Média: 29.93%
+    * Rodada 76 removida -> Latência: 4.7289s | CPU Média: 19.66%
+  Query Q22 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [3.5939s a 5.0950s]
+    * Rodada 45 removida -> Latência: 5.3033s | CPU Média: 19.12%
+  Query Q23 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 80/90 rodadas mantidas | Limites IQR: [3.8007s a 4.4252s]
+    * Rodada 6 removida -> Latência: 4.5762s | CPU Média: 24.47%
+    * Rodada 16 removida -> Latência: 4.5173s | CPU Média: 16.42%
+    * Rodada 39 removida -> Latência: 4.4582s | CPU Média: 15.85%
+    * Rodada 46 removida -> Latência: 4.5332s | CPU Média: 24.15%
+    * Rodada 52 removida -> Latência: 4.8332s | CPU Média: 16.73%
+    * Rodada 66 removida -> Latência: 4.5457s | CPU Média: 17.85%
+    * Rodada 75 removida -> Latência: 4.9191s | CPU Média: 24.20%
+    * Rodada 76 removida -> Latência: 4.9243s | CPU Média: 15.52%
+    * Rodada 83 removida -> Latência: 4.4297s | CPU Média: 16.80%
+    * Rodada 89 removida -> Latência: 4.4899s | CPU Média: 18.91%
+  Query Q26 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 81/90 rodadas mantidas | Limites IQR: [4.0024s a 4.4655s]
+    * Rodada 1 removida -> Latência: 4.5866s | CPU Média: 18.10%
+    * Rodada 20 removida -> Latência: 4.5043s | CPU Média: 18.13%
+    * Rodada 27 removida -> Latência: 4.5021s | CPU Média: 20.93%
+    * Rodada 40 removida -> Latência: 4.8201s | CPU Média: 17.65%
+    * Rodada 53 removida -> Latência: 4.5507s | CPU Média: 16.41%
+    * Rodada 61 removida -> Latência: 4.0012s | CPU Média: 17.17%
+    * Rodada 65 removida -> Latência: 4.8158s | CPU Média: 21.50%
+    * Rodada 76 removida -> Latência: 5.0584s | CPU Média: 23.81%
+    * Rodada 84 removida -> Latência: 4.4822s | CPU Média: 15.93%
+  Query Q27 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 76/90 rodadas mantidas | Limites IQR: [3.9002s a 4.9775s]
+    * Rodada 18 removida -> Latência: 5.1592s | CPU Média: 13.17%
+    * Rodada 24 removida -> Latência: 5.0781s | CPU Média: 14.63%
+    * Rodada 45 removida -> Latência: 6.5634s | CPU Média: 16.48%
+    * Rodada 54 removida -> Latência: 5.2942s | CPU Média: 13.14%
+    * Rodada 57 removida -> Latência: 5.2326s | CPU Média: 18.28%
+    * Rodada 60 removida -> Latência: 5.1729s | CPU Média: 16.05%
+    * Rodada 61 removida -> Latência: 5.4735s | CPU Média: 16.43%
+    * Rodada 65 removida -> Latência: 5.6592s | CPU Média: 16.76%
+    * Rodada 66 removida -> Latência: 5.2851s | CPU Média: 13.45%
+    * Rodada 69 removida -> Latência: 5.1962s | CPU Média: 13.41%
+    * Rodada 75 removida -> Latência: 5.2406s | CPU Média: 14.37%
+    * Rodada 78 removida -> Latência: 5.3868s | CPU Média: 15.21%
+    * Rodada 84 removida -> Latência: 5.6904s | CPU Média: 13.42%
+    * Rodada 87 removida -> Latência: 5.2107s | CPU Média: 14.03%
+  Query Q29 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [4.0390s a 5.2388s]
+    * Rodada 45 removida -> Latência: 5.5776s | CPU Média: 18.49%
+    * Rodada 84 removida -> Latência: 5.2600s | CPU Média: 16.14%
+  Query Q30 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 82/90 rodadas mantidas | Limites IQR: [-8.9679s a 88.5173s]
+    * Rodada 5 removida -> Latência: 95.5864s | CPU Média: 7.18%
+    * Rodada 10 removida -> Latência: 97.4603s | CPU Média: 6.93%
+    * Rodada 14 removida -> Latência: 125.0537s | CPU Média: 5.51%
+    * Rodada 20 removida -> Latência: 95.9765s | CPU Média: 7.70%
+    * Rodada 25 removida -> Latência: 93.9674s | CPU Média: 7.56%
+    * Rodada 29 removida -> Latência: 91.0528s | CPU Média: 7.17%
+    * Rodada 31 removida -> Latência: 89.8911s | CPU Média: 7.18%
+    * Rodada 89 removida -> Latência: 96.1667s | CPU Média: 7.06%
+  Query Q31 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 87/90 rodadas mantidas | Limites IQR: [-3.5657s a 81.4202s]
+    * Rodada 29 removida -> Latência: 101.9596s | CPU Média: 7.39%
+    * Rodada 40 removida -> Latência: 119.8950s | CPU Média: 6.92%
+    * Rodada 75 removida -> Latência: 101.5355s | CPU Média: 8.25%
+  Query Q32 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 85/90 rodadas mantidas | Limites IQR: [2.6227s a 99.1200s]
+    * Rodada 49 removida -> Latência: 107.4981s | CPU Média: 9.22%
+    * Rodada 59 removida -> Latência: 123.3922s | CPU Média: 8.10%
+    * Rodada 66 removida -> Latência: 107.8828s | CPU Média: 8.43%
+    * Rodada 70 removida -> Latência: 108.8102s | CPU Média: 8.71%
+    * Rodada 90 removida -> Latência: 102.8945s | CPU Média: 9.49%
+  Query Q33 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 85/90 rodadas mantidas | Limites IQR: [14.8321s a 94.0780s]
+    * Rodada 34 removida -> Latência: 112.5754s | CPU Média: 9.72%
+    * Rodada 38 removida -> Latência: 104.9637s | CPU Média: 9.37%
+    * Rodada 57 removida -> Latência: 102.0849s | CPU Média: 10.05%
+    * Rodada 70 removida -> Latência: 108.5051s | CPU Média: 9.36%
+    * Rodada 79 removida -> Latência: 108.0904s | CPU Média: 10.64%
+  Query Q34 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 88/90 rodadas mantidas | Limites IQR: [-2.7638s a 92.3829s]
+    * Rodada 3 removida -> Latência: 103.0944s | CPU Média: 7.63%
+    * Rodada 83 removida -> Latência: 96.4086s | CPU Média: 8.90%
+  Query Q35 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 88/90 rodadas mantidas | Limites IQR: [48.6896s a 139.1465s]
+    * Rodada 18 removida -> Latência: 140.9919s | CPU Média: 9.96%
+    * Rodada 57 removida -> Latência: 156.6751s | CPU Média: 9.50%
+  Query Q36 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 85/90 rodadas mantidas | Limites IQR: [78.1258s a 164.5941s]
+    * Rodada 5 removida -> Latência: 203.0474s | CPU Média: 8.47%
+    * Rodada 23 removida -> Latência: 179.0761s | CPU Média: 9.27%
+    * Rodada 38 removida -> Latência: 214.8486s | CPU Média: 8.12%
+    * Rodada 54 removida -> Latência: 271.9052s | CPU Média: 6.98%
+    * Rodada 57 removida -> Latência: 251.2991s | CPU Média: 7.70%
+  Query Q37 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 84/90 rodadas mantidas | Limites IQR: [48.2223s a 126.4202s]
+    * Rodada 1 removida -> Latência: 135.4109s | CPU Média: 13.10%
+    * Rodada 4 removida -> Latência: 145.2412s | CPU Média: 9.73%
+    * Rodada 8 removida -> Latência: 150.5569s | CPU Média: 9.38%
+    * Rodada 28 removida -> Latência: 137.6497s | CPU Média: 10.21%
+    * Rodada 52 removida -> Latência: 129.7559s | CPU Média: 10.77%
+    * Rodada 89 removida -> Latência: 141.6369s | CPU Média: 10.48%
+  Query Q38 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 87/90 rodadas mantidas | Limites IQR: [3.7256s a 4.6992s]
+    * Rodada 38 removida -> Latência: 4.7607s | CPU Média: 18.92%
+    * Rodada 79 removida -> Latência: 5.5015s | CPU Média: 24.53%
+    * Rodada 81 removida -> Latência: 4.7359s | CPU Média: 20.65%
+  Query Q39 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 83/90 rodadas mantidas | Limites IQR: [20.6816s a 22.2026s]
+    * Rodada 28 removida -> Latência: 23.1690s | CPU Média: 15.19%
+    * Rodada 58 removida -> Latência: 23.3419s | CPU Média: 17.45%
+    * Rodada 70 removida -> Latência: 22.2366s | CPU Média: 19.19%
+    * Rodada 79 removida -> Latência: 22.3533s | CPU Média: 22.65%
+    * Rodada 80 removida -> Latência: 22.7001s | CPU Média: 18.72%
+    * Rodada 84 removida -> Latência: 22.7464s | CPU Média: 18.69%
+    * Rodada 89 removida -> Latência: 23.4984s | CPU Média: 18.65%
+  Query Q40 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 88/90 rodadas mantidas | Limites IQR: [5.1756s a 6.2373s]
+    * Rodada 58 removida -> Latência: 6.4337s | CPU Média: 30.95%
+    * Rodada 65 removida -> Latência: 6.6167s | CPU Média: 27.71%
+  Query Q41 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 89/90 rodadas mantidas | Limites IQR: [-5.9575s a 132.2156s]
+    * Rodada 43 removida -> Latência: 156.0531s | CPU Média: 7.71%
+  Query Q43 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 80/90 rodadas mantidas | Limites IQR: [3.9821s a 4.3959s]
+    * Rodada 6 removida -> Latência: 4.6558s | CPU Média: 18.87%
+    * Rodada 9 removida -> Latência: 4.4393s | CPU Média: 18.79%
+    * Rodada 10 removida -> Latência: 4.4377s | CPU Média: 21.97%
+    * Rodada 25 removida -> Latência: 4.4615s | CPU Média: 14.99%
+    * Rodada 26 removida -> Latência: 4.4818s | CPU Média: 20.49%
+    * Rodada 32 removida -> Latência: 4.4548s | CPU Média: 16.72%
+    * Rodada 45 removida -> Latência: 4.5267s | CPU Média: 19.62%
+    * Rodada 46 removida -> Latência: 3.9257s | CPU Média: 19.20%
+    * Rodada 54 removida -> Latência: 4.8758s | CPU Média: 17.71%
+    * Rodada 87 removida -> Latência: 4.8374s | CPU Média: 18.06%
+  Query Q44 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 87/90 rodadas mantidas | Limites IQR: [15.6567s a 33.6410s]
+    * Rodada 7 removida -> Latência: 33.9951s | CPU Média: 12.82%
+    * Rodada 16 removida -> Latência: 35.5261s | CPU Média: 11.95%
+    * Rodada 54 removida -> Latência: 37.2153s | CPU Média: 11.77%
+
+>>> BANCO: PostgreSQL (Com Índices)
+  Query Q01 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [0.0177s a 0.0310s]
+    * Rodada 1 removida -> Latência: 0.0077s | CPU Média: 11.40%
+    * Rodada 45 removida -> Latência: 0.0317s | CPU Média: 35.00%
+    * Rodada 65 removida -> Latência: 0.0316s | CPU Média: 38.60%
+    * Rodada 74 removida -> Latência: 0.0173s | CPU Média: 24.10%
+    * Rodada 78 removida -> Latência: 0.0320s | CPU Média: 20.00%
+    * Rodada 90 removida -> Latência: 0.0545s | CPU Média: 79.40%
+  Query Q02 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 85/90 rodadas mantidas | Limites IQR: [0.1493s a 0.2116s]
+    * Rodada 1 removida -> Latência: 0.0096s | CPU Média: 37.50%
+    * Rodada 8 removida -> Latência: 0.2566s | CPU Média: 30.88%
+    * Rodada 11 removida -> Latência: 0.2270s | CPU Média: 24.62%
+    * Rodada 26 removida -> Latência: 0.2466s | CPU Média: 32.34%
+    * Rodada 61 removida -> Latência: 0.2205s | CPU Média: 25.94%
+  Query Q03 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 85/90 rodadas mantidas | Limites IQR: [0.2887s a 0.4152s]
+    * Rodada 1 removida -> Latência: 0.1301s | CPU Média: 43.70%
+    * Rodada 21 removida -> Latência: 0.6206s | CPU Média: 21.62%
+    * Rodada 62 removida -> Latência: 0.4536s | CPU Média: 24.94%
+    * Rodada 77 removida -> Latência: 0.4659s | CPU Média: 25.86%
+    * Rodada 78 removida -> Latência: 0.4484s | CPU Média: 35.08%
+  Query Q05 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [0.1044s a 0.1437s]
+    * Rodada 51 removida -> Latência: 0.0990s | CPU Média: 16.50%
+    * Rodada 58 removida -> Latência: 0.1449s | CPU Média: 19.60%
+    * Rodada 74 removida -> Latência: 0.1027s | CPU Média: 21.87%
+    * Rodada 75 removida -> Latência: 0.1507s | CPU Média: 16.40%
+    * Rodada 78 removida -> Latência: 0.1565s | CPU Média: 24.60%
+    * Rodada 82 removida -> Latência: 0.1446s | CPU Média: 12.17%
+  Query Q06 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [7.4318s a 8.4413s]
+    * Rodada 7 removida -> Latência: 9.1705s | CPU Média: 12.23%
+    * Rodada 20 removida -> Latência: 8.4500s | CPU Média: 11.64%
+    * Rodada 26 removida -> Latência: 8.6404s | CPU Média: 11.17%
+    * Rodada 43 removida -> Latência: 8.4657s | CPU Média: 12.42%
+    * Rodada 61 removida -> Latência: 8.6208s | CPU Média: 13.89%
+    * Rodada 84 removida -> Latência: 8.5750s | CPU Média: 13.93%
+  Query Q07 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 87/90 rodadas mantidas | Limites IQR: [0.0621s a 0.0955s]
+    * Rodada 21 removida -> Latência: 0.0987s | CPU Média: 30.05%
+    * Rodada 46 removida -> Latência: 0.1043s | CPU Média: 23.03%
+    * Rodada 50 removida -> Latência: 0.2398s | CPU Média: 14.20%
+  Query Q08 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [3.3521s a 4.6373s]
+    * Rodada 40 removida -> Latência: 5.1559s | CPU Média: 11.75%
+  Query Q09 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [0.1414s a 0.1917s]
+    * Rodada 2 removida -> Latência: 0.1922s | CPU Média: 37.45%
+    * Rodada 10 removida -> Latência: 0.2221s | CPU Média: 10.78%
+    * Rodada 33 removida -> Latência: 0.2082s | CPU Média: 15.00%
+    * Rodada 52 removida -> Latência: 0.2226s | CPU Média: 23.18%
+    * Rodada 72 removida -> Latência: 0.2273s | CPU Média: 39.44%
+    * Rodada 80 removida -> Latência: 0.1936s | CPU Média: 25.73%
+  Query Q10 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 79/90 rodadas mantidas | Limites IQR: [4.9334s a 5.5063s]
+    * Rodada 15 removida -> Latência: 5.6456s | CPU Média: 15.88%
+    * Rodada 20 removida -> Latência: 5.5721s | CPU Média: 13.36%
+    * Rodada 26 removida -> Latência: 5.8372s | CPU Média: 18.35%
+    * Rodada 40 removida -> Latência: 6.2976s | CPU Média: 13.87%
+    * Rodada 46 removida -> Latência: 5.6413s | CPU Média: 12.57%
+    * Rodada 50 removida -> Latência: 5.7805s | CPU Média: 19.21%
+    * Rodada 52 removida -> Latência: 6.3615s | CPU Média: 12.78%
+    * Rodada 55 removida -> Latência: 5.8329s | CPU Média: 14.96%
+    * Rodada 58 removida -> Latência: 5.6213s | CPU Média: 18.66%
+    * Rodada 61 removida -> Latência: 6.1461s | CPU Média: 15.65%
+    * Rodada 88 removida -> Latência: 5.7695s | CPU Média: 13.57%
+  Query Q11 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [3.4681s a 4.6329s]
+    * Rodada 26 removida -> Latência: 4.8196s | CPU Média: 14.61%
+    * Rodada 78 removida -> Latência: 4.8223s | CPU Média: 15.51%
+  Query Q12 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.2851s a 0.4018s]
+    * Rodada 74 removida -> Latência: 0.5961s | CPU Média: 24.78%
+    * Rodada 84 removida -> Latência: 0.4228s | CPU Média: 28.18%
+  Query Q13 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 85/90 rodadas mantidas | Limites IQR: [0.8404s a 1.0167s]
+    * Rodada 12 removida -> Latência: 1.3503s | CPU Média: 24.80%
+    * Rodada 33 removida -> Latência: 1.0168s | CPU Média: 39.72%
+    * Rodada 48 removida -> Latência: 1.1137s | CPU Média: 24.18%
+    * Rodada 63 removida -> Latência: 1.1562s | CPU Média: 34.03%
+    * Rodada 78 removida -> Latência: 1.1753s | CPU Média: 26.10%
+  Query Q14 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [1.7716s a 2.1489s]
+    * Rodada 24 removida -> Latência: 2.4906s | CPU Média: 18.68%
+    * Rodada 37 removida -> Latência: 2.1961s | CPU Média: 26.67%
+    * Rodada 70 removida -> Latência: 2.2227s | CPU Média: 23.36%
+    * Rodada 75 removida -> Latência: 2.1676s | CPU Média: 34.93%
+  Query Q15 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 85/90 rodadas mantidas | Limites IQR: [46.4301s a 50.1169s]
+    * Rodada 1 removida -> Latência: 52.1569s | CPU Média: 22.43%
+    * Rodada 2 removida -> Latência: 50.8413s | CPU Média: 17.47%
+    * Rodada 66 removida -> Latência: 55.8209s | CPU Média: 17.58%
+    * Rodada 78 removida -> Latência: 52.2335s | CPU Média: 11.04%
+    * Rodada 80 removida -> Latência: 52.2006s | CPU Média: 23.36%
+  Query Q16 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.3462s a 0.5146s]
+    * Rodada 52 removida -> Latência: 0.7668s | CPU Média: 25.84%
+    * Rodada 66 removida -> Latência: 0.6717s | CPU Média: 40.58%
+  Query Q17 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [3.3394s a 4.4751s]
+    * Rodada 66 removida -> Latência: 4.4828s | CPU Média: 27.78%
+  Query Q18 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [3.2172s a 4.6295s]
+    * Rodada 66 removida -> Latência: 4.7353s | CPU Média: 27.29%
+  Query Q19 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [9.6876s a 10.6669s]
+    * Rodada 2 removida -> Latência: 10.6795s | CPU Média: 25.58%
+    * Rodada 5 removida -> Latência: 10.7694s | CPU Média: 21.14%
+    * Rodada 14 removida -> Latência: 10.7207s | CPU Média: 21.86%
+    * Rodada 61 removida -> Latência: 11.1401s | CPU Média: 19.47%
+    * Rodada 66 removida -> Latência: 10.8065s | CPU Média: 28.29%
+    * Rodada 76 removida -> Latência: 11.4650s | CPU Média: 16.70%
+  Query Q21 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.5342s a 0.7569s]
+    * Rodada 61 removida -> Latência: 0.5188s | CPU Média: 26.45%
+    * Rodada 72 removida -> Latência: 0.7892s | CPU Média: 60.39%
+  Query Q22 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.8015s a 0.9753s]
+    * Rodada 5 removida -> Latência: 1.0117s | CPU Média: 24.10%
+    * Rodada 6 removida -> Latência: 0.9835s | CPU Média: 49.81%
+    * Rodada 60 removida -> Latência: 1.0013s | CPU Média: 24.14%
+    * Rodada 75 removida -> Latência: 0.9928s | CPU Média: 29.93%
+  Query Q23 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.1989s a 0.2499s]
+    * Rodada 5 removida -> Latência: 0.2516s | CPU Média: 32.04%
+    * Rodada 47 removida -> Latência: 0.1952s | CPU Média: 25.30%
+  Query Q25 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [0.3820s a 0.5112s]
+    * Rodada 57 removida -> Latência: 0.5433s | CPU Média: 51.28%
+  Query Q26 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 87/90 rodadas mantidas | Limites IQR: [0.6544s a 0.8240s]
+    * Rodada 14 removida -> Latência: 0.8378s | CPU Média: 37.58%
+    * Rodada 45 removida -> Latência: 0.8296s | CPU Média: 40.89%
+    * Rodada 76 removida -> Latência: 0.8688s | CPU Média: 31.60%
+  Query Q27 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [0.7811s a 1.0077s]
+    * Rodada 1 removida -> Latência: 1.4246s | CPU Média: 15.80%
+    * Rodada 5 removida -> Latência: 1.2957s | CPU Média: 18.10%
+    * Rodada 12 removida -> Latência: 1.0257s | CPU Média: 47.50%
+    * Rodada 19 removida -> Latência: 1.1555s | CPU Média: 23.19%
+    * Rodada 31 removida -> Latência: 1.1808s | CPU Média: 19.81%
+    * Rodada 89 removida -> Latência: 0.7697s | CPU Média: 26.29%
+  Query Q28 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [3.4589s a 4.2133s]
+    * Rodada 5 removida -> Latência: 4.4871s | CPU Média: 12.37%
+    * Rodada 18 removida -> Latência: 4.2953s | CPU Média: 17.47%
+    * Rodada 40 removida -> Latência: 4.2776s | CPU Média: 18.26%
+    * Rodada 52 removida -> Latência: 4.9149s | CPU Média: 13.62%
+    * Rodada 75 removida -> Latência: 4.4397s | CPU Média: 19.47%
+    * Rodada 76 removida -> Latência: 4.3700s | CPU Média: 28.97%
+  Query Q29 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [0.9145s a 1.1382s]
+    * Rodada 87 removida -> Latência: 1.1662s | CPU Média: 41.90%
+  Query Q30 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 89/90 rodadas mantidas | Limites IQR: [-16.4159s a 88.1415s]
+    * Rodada 66 removida -> Latência: 111.6130s | CPU Média: 6.08%
+  Query Q31 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 84/90 rodadas mantidas | Limites IQR: [-11.0943s a 82.4303s]
+    * Rodada 21 removida -> Latência: 93.3072s | CPU Média: 8.11%
+    * Rodada 35 removida -> Latência: 132.6258s | CPU Média: 5.68%
+    * Rodada 50 removida -> Latência: 119.3418s | CPU Média: 6.84%
+    * Rodada 55 removida -> Latência: 94.0090s | CPU Média: 7.16%
+    * Rodada 56 removida -> Latência: 92.4808s | CPU Média: 7.02%
+    * Rodada 60 removida -> Latência: 96.2895s | CPU Média: 7.49%
+  Query Q32 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 89/90 rodadas mantidas | Limites IQR: [-5.7011s a 79.7010s]
+    * Rodada 63 removida -> Latência: 96.0753s | CPU Média: 7.70%
+  Query Q33 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 89/90 rodadas mantidas | Limites IQR: [-1.8394s a 77.2439s]
+    * Rodada 71 removida -> Latência: 100.5115s | CPU Média: 6.88%
+  Query Q34 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 80/90 rodadas mantidas | Limites IQR: [21.1950s a 21.9125s]
+    * Rodada 6 removida -> Latência: 21.9208s | CPU Média: 18.63%
+    * Rodada 10 removida -> Latência: 22.1353s | CPU Média: 19.70%
+    * Rodada 19 removida -> Latência: 22.8798s | CPU Média: 17.17%
+    * Rodada 32 removida -> Latência: 24.7786s | CPU Média: 17.80%
+    * Rodada 61 removida -> Latência: 24.2806s | CPU Média: 17.54%
+    * Rodada 65 removida -> Latência: 22.1166s | CPU Média: 17.89%
+    * Rodada 68 removida -> Latência: 21.9935s | CPU Média: 19.65%
+    * Rodada 77 removida -> Latência: 21.9748s | CPU Média: 18.86%
+    * Rodada 84 removida -> Latência: 22.0381s | CPU Média: 18.95%
+    * Rodada 87 removida -> Latência: 23.1135s | CPU Média: 18.37%
+  Query Q35 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 86/90 rodadas mantidas | Limites IQR: [-1.6115s a 88.2556s]
+    * Rodada 7 removida -> Latência: 103.3083s | CPU Média: 8.24%
+    * Rodada 10 removida -> Latência: 109.7475s | CPU Média: 7.43%
+    * Rodada 15 removida -> Latência: 112.3764s | CPU Média: 7.72%
+    * Rodada 49 removida -> Latência: 102.8922s | CPU Média: 8.70%
+  Query Q36 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 75/90 rodadas mantidas | Limites IQR: [71.0409s a 76.6544s]
+    * Rodada 1 removida -> Latência: 78.8484s | CPU Média: 10.64%
+    * Rodada 4 removida -> Latência: 77.1120s | CPU Média: 11.33%
+    * Rodada 13 removida -> Latência: 76.7068s | CPU Média: 10.65%
+    * Rodada 16 removida -> Latência: 77.6144s | CPU Média: 10.96%
+    * Rodada 24 removida -> Latência: 77.4205s | CPU Média: 10.83%
+    * Rodada 26 removida -> Latência: 78.2116s | CPU Média: 10.76%
+    * Rodada 45 removida -> Latência: 79.4371s | CPU Média: 11.53%
+    * Rodada 52 removida -> Latência: 80.3345s | CPU Média: 10.52%
+    * Rodada 56 removida -> Latência: 76.7738s | CPU Média: 9.82%
+    * Rodada 60 removida -> Latência: 77.2144s | CPU Média: 10.74%
+    * Rodada 63 removida -> Latência: 76.7129s | CPU Média: 10.33%
+    * Rodada 71 removida -> Latência: 79.0555s | CPU Média: 11.54%
+    * Rodada 77 removida -> Latência: 81.3066s | CPU Média: 10.74%
+    * Rodada 78 removida -> Latência: 77.4680s | CPU Média: 11.13%
+    * Rodada 87 removida -> Latência: 77.6045s | CPU Média: 10.88%
+  Query Q37 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 85/90 rodadas mantidas | Limites IQR: [11.8448s a 80.5771s]
+    * Rodada 56 removida -> Latência: 97.8085s | CPU Média: 10.21%
+    * Rodada 63 removida -> Latência: 121.6578s | CPU Média: 7.62%
+    * Rodada 69 removida -> Latência: 94.0193s | CPU Média: 9.61%
+    * Rodada 79 removida -> Latência: 121.8725s | CPU Média: 8.95%
+    * Rodada 84 removida -> Latência: 97.7248s | CPU Média: 9.73%
+  Query Q38 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 89/90 rodadas mantidas | Limites IQR: [0.0657s a 0.1509s]
+    * Rodada 81 removida -> Latência: 0.1553s | CPU Média: 48.12%
+  Query Q39 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 83/90 rodadas mantidas | Limites IQR: [15.5087s a 16.2725s]
+    * Rodada 22 removida -> Latência: 16.8766s | CPU Média: 18.60%
+    * Rodada 28 removida -> Latência: 16.7482s | CPU Média: 17.28%
+    * Rodada 37 removida -> Latência: 16.7701s | CPU Média: 18.97%
+    * Rodada 44 removida -> Latência: 17.5868s | CPU Média: 17.36%
+    * Rodada 49 removida -> Latência: 16.7444s | CPU Média: 18.84%
+    * Rodada 65 removida -> Latência: 16.3732s | CPU Média: 21.33%
+    * Rodada 82 removida -> Latência: 16.4293s | CPU Média: 17.08%
+  Query Q41 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 82/90 rodadas mantidas | Limites IQR: [18.0464s a 20.1074s]
+    * Rodada 23 removida -> Latência: 20.2244s | CPU Média: 21.55%
+    * Rodada 28 removida -> Latência: 22.5755s | CPU Média: 20.10%
+    * Rodada 33 removida -> Latência: 20.1624s | CPU Média: 22.08%
+    * Rodada 57 removida -> Latência: 21.3452s | CPU Média: 22.20%
+    * Rodada 58 removida -> Latência: 20.5337s | CPU Média: 21.95%
+    * Rodada 69 removida -> Latência: 20.4512s | CPU Média: 22.37%
+    * Rodada 70 removida -> Latência: 21.2782s | CPU Média: 21.28%
+    * Rodada 81 removida -> Latência: 20.3153s | CPU Média: 19.39%
+  Query Q42 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 88/90 rodadas mantidas | Limites IQR: [3.5374s a 4.2673s]
+    * Rodada 23 removida -> Latência: 4.4292s | CPU Média: 16.36%
+    * Rodada 54 removida -> Latência: 5.6217s | CPU Média: 16.18%
+  Query Q44 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 83/90 rodadas mantidas | Limites IQR: [15.0845s a 17.5221s]
+    * Rodada 7 removida -> Latência: 17.5433s | CPU Média: 18.08%
+    * Rodada 9 removida -> Latência: 17.8142s | CPU Média: 14.19%
+    * Rodada 16 removida -> Latência: 18.0049s | CPU Média: 15.29%
+    * Rodada 54 removida -> Latência: 18.0039s | CPU Média: 13.58%
+    * Rodada 58 removida -> Latência: 18.6247s | CPU Média: 16.33%
+    * Rodada 83 removida -> Latência: 17.6534s | CPU Média: 17.03%
+    * Rodada 87 removida -> Latência: 18.7578s | CPU Média: 14.34%
+
+>>> BANCO: ClickHouse
+  Query Q01 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [0.7025s a 0.9920s]
+    * Rodada 10 removida -> Latência: 1.0089s | CPU Média: 33.72%
+  Query Q02 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 87/90 rodadas mantidas | Limites IQR: [0.1166s a 0.1578s]
+    * Rodada 1 removida -> Latência: 0.1052s | CPU Média: 18.23%
+    * Rodada 28 removida -> Latência: 0.1663s | CPU Média: 26.33%
+    * Rodada 29 removida -> Latência: 0.1583s | CPU Média: 54.43%
+  Query Q04 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.0784s a 0.1088s]
+    * Rodada 33 removida -> Latência: 0.1346s | CPU Média: 9.70%
+    * Rodada 40 removida -> Latência: 0.1420s | CPU Média: 17.43%
+    * Rodada 75 removida -> Latência: 0.1123s | CPU Média: 53.20%
+    * Rodada 89 removida -> Latência: 0.1094s | CPU Média: 50.97%
+  Query Q05 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [0.0616s a 0.0843s]
+    * Rodada 55 removida -> Latência: 0.0872s | CPU Média: 29.45%
+  Query Q06 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.0629s a 0.0874s]
+    * Rodada 9 removida -> Latência: 0.0927s | CPU Média: 31.30%
+    * Rodada 14 removida -> Latência: 0.0927s | CPU Média: 33.85%
+    * Rodada 15 removida -> Latência: 0.1104s | CPU Média: 8.13%
+    * Rodada 52 removida -> Latência: 0.1253s | CPU Média: 9.60%
+  Query Q07 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 85/90 rodadas mantidas | Limites IQR: [0.0894s a 0.1188s]
+    * Rodada 15 removida -> Latência: 0.1202s | CPU Média: 10.90%
+    * Rodada 52 removida -> Latência: 0.3199s | CPU Média: 8.13%
+    * Rodada 61 removida -> Latência: 0.1441s | CPU Média: 22.23%
+    * Rodada 84 removida -> Latência: 0.1666s | CPU Média: 14.80%
+    * Rodada 88 removida -> Latência: 0.1329s | CPU Média: 72.77%
+  Query Q08 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.0568s a 0.0825s]
+    * Rodada 21 removida -> Latência: 0.0990s | CPU Média: 5.90%
+    * Rodada 40 removida -> Latência: 0.0901s | CPU Média: 6.40%
+  Query Q09 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 87/90 rodadas mantidas | Limites IQR: [0.0808s a 0.1069s]
+    * Rodada 1 removida -> Latência: 0.1073s | CPU Média: 19.80%
+    * Rodada 13 removida -> Latência: 0.1075s | CPU Média: 37.27%
+    * Rodada 30 removida -> Latência: 0.1102s | CPU Média: 31.97%
+  Query Q11 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 79/90 rodadas mantidas | Limites IQR: [0.1103s a 0.1411s]
+    * Rodada 1 removida -> Latência: 0.1537s | CPU Média: 35.02%
+    * Rodada 4 removida -> Latência: 0.1434s | CPU Média: 17.37%
+    * Rodada 5 removida -> Latência: 0.1413s | CPU Média: 22.50%
+    * Rodada 12 removida -> Latência: 0.1566s | CPU Média: 39.35%
+    * Rodada 16 removida -> Latência: 0.1465s | CPU Média: 34.77%
+    * Rodada 19 removida -> Latência: 0.1094s | CPU Média: 15.33%
+    * Rodada 28 removida -> Latência: 0.1632s | CPU Média: 23.73%
+    * Rodada 40 removida -> Latência: 0.1475s | CPU Média: 37.53%
+    * Rodada 66 removida -> Latência: 0.1542s | CPU Média: 55.37%
+    * Rodada 70 removida -> Latência: 0.1471s | CPU Média: 42.93%
+    * Rodada 82 removida -> Latência: 0.1904s | CPU Média: 40.35%
+  Query Q12 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.0945s a 0.1336s]
+    * Rodada 1 removida -> Latência: 0.1484s | CPU Média: 33.93%
+    * Rodada 73 removida -> Latência: 0.1543s | CPU Média: 15.40%
+    * Rodada 74 removida -> Latência: 0.1949s | CPU Média: 21.40%
+    * Rodada 76 removida -> Latência: 0.1408s | CPU Média: 50.73%
+  Query Q13 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.1096s a 0.1451s]
+    * Rodada 11 removida -> Latência: 0.3433s | CPU Média: 10.27%
+    * Rodada 28 removida -> Latência: 0.2002s | CPU Média: 19.38%
+    * Rodada 48 removida -> Latência: 0.1741s | CPU Média: 10.05%
+    * Rodada 78 removida -> Latência: 0.1937s | CPU Média: 8.95%
+  Query Q14 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 85/90 rodadas mantidas | Limites IQR: [0.1624s a 0.2066s]
+    * Rodada 16 removida -> Latência: 0.2132s | CPU Média: 26.12%
+    * Rodada 49 removida -> Latência: 0.2426s | CPU Média: 27.14%
+    * Rodada 55 removida -> Latência: 0.2134s | CPU Média: 17.58%
+    * Rodada 80 removida -> Latência: 0.2285s | CPU Média: 19.06%
+    * Rodada 88 removida -> Latência: 0.3162s | CPU Média: 10.41%
+  Query Q15 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 84/90 rodadas mantidas | Limites IQR: [1.2486s a 1.5791s]
+    * Rodada 1 removida -> Latência: 1.6215s | CPU Média: 32.13%
+    * Rodada 12 removida -> Latência: 2.0699s | CPU Média: 29.88%
+    * Rodada 20 removida -> Latência: 1.5822s | CPU Média: 31.26%
+    * Rodada 72 removida -> Latência: 1.2335s | CPU Média: 18.99%
+    * Rodada 73 removida -> Latência: 1.5893s | CPU Média: 26.32%
+    * Rodada 77 removida -> Latência: 1.6041s | CPU Média: 24.92%
+  Query Q16 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.0812s a 0.1192s]
+    * Rodada 1 removida -> Latência: 0.1227s | CPU Média: 34.07%
+    * Rodada 66 removida -> Latência: 0.2125s | CPU Média: 39.30%
+  Query Q17 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 87/90 rodadas mantidas | Limites IQR: [0.1003s a 0.1387s]
+    * Rodada 73 removida -> Latência: 0.1762s | CPU Média: 32.77%
+    * Rodada 74 removida -> Latência: 0.1434s | CPU Média: 64.57%
+    * Rodada 79 removida -> Latência: 0.1527s | CPU Média: 61.47%
+  Query Q18 (Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.1032s a 0.1351s]
+    * Rodada 1 removida -> Latência: 0.1387s | CPU Média: 25.33%
+    * Rodada 43 removida -> Latência: 0.1367s | CPU Média: 52.63%
+    * Rodada 74 removida -> Latência: 0.1720s | CPU Média: 44.55%
+    * Rodada 80 removida -> Latência: 0.1027s | CPU Média: 30.23%
+  Query Q19 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 83/90 rodadas mantidas | Limites IQR: [0.2428s a 0.3196s]
+    * Rodada 2 removida -> Latência: 0.3390s | CPU Média: 39.09%
+    * Rodada 21 removida -> Latência: 0.3234s | CPU Média: 24.20%
+    * Rodada 27 removida -> Latência: 0.3351s | CPU Média: 29.00%
+    * Rodada 31 removida -> Latência: 0.3803s | CPU Média: 33.36%
+    * Rodada 51 removida -> Latência: 0.3206s | CPU Média: 50.90%
+    * Rodada 61 removida -> Latência: 0.3220s | CPU Média: 37.11%
+    * Rodada 77 removida -> Latência: 0.3303s | CPU Média: 18.73%
+  Query Q20 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.0759s a 0.1048s]
+    * Rodada 58 removida -> Latência: 0.1225s | CPU Média: 53.13%
+    * Rodada 87 removida -> Latência: 0.1139s | CPU Média: 49.60%
+  Query Q21 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 89/90 rodadas mantidas | Limites IQR: [0.0806s a 0.1134s]
+    * Rodada 57 removida -> Latência: 0.1201s | CPU Média: 50.20%
+  Query Q22 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.0975s a 0.1356s]
+    * Rodada 16 removida -> Latência: 0.1474s | CPU Média: 48.83%
+    * Rodada 49 removida -> Latência: 0.0967s | CPU Média: 24.90%
+    * Rodada 62 removida -> Latência: 0.1392s | CPU Média: 55.10%
+    * Rodada 63 removida -> Latência: 0.1436s | CPU Média: 34.50%
+  Query Q23 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.0981s a 0.1339s]
+    * Rodada 42 removida -> Latência: 0.1349s | CPU Média: 38.40%
+    * Rodada 65 removida -> Latência: 0.1446s | CPU Média: 68.80%
+  Query Q24 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.0959s a 0.1219s]
+    * Rodada 8 removida -> Latência: 0.1243s | CPU Média: 18.03%
+    * Rodada 64 removida -> Latência: 0.0952s | CPU Média: 13.70%
+  Query Q25 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.1353s a 0.1712s]
+    * Rodada 16 removida -> Latência: 0.2168s | CPU Média: 38.02%
+    * Rodada 22 removida -> Latência: 0.1998s | CPU Média: 28.20%
+    * Rodada 31 removida -> Latência: 0.1997s | CPU Média: 21.55%
+    * Rodada 52 removida -> Latência: 0.2238s | CPU Média: 30.64%
+  Query Q26 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 88/90 rodadas mantidas | Limites IQR: [0.0759s a 0.1010s]
+    * Rodada 48 removida -> Latência: 0.1029s | CPU Média: 59.03%
+    * Rodada 65 removida -> Latência: 0.1135s | CPU Média: 24.60%
+  Query Q27 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 86/90 rodadas mantidas | Limites IQR: [0.1117s a 0.1454s]
+    * Rodada 59 removida -> Latência: 0.1646s | CPU Média: 45.98%
+    * Rodada 76 removida -> Latência: 0.2123s | CPU Média: 32.66%
+    * Rodada 79 removida -> Latência: 0.1484s | CPU Média: 48.50%
+    * Rodada 83 removida -> Latência: 0.1488s | CPU Média: 38.93%
+  Query Q28 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 87/90 rodadas mantidas | Limites IQR: [0.0872s a 0.1127s]
+    * Rodada 6 removida -> Latência: 0.1141s | CPU Média: 51.30%
+    * Rodada 7 removida -> Latência: 0.1289s | CPU Média: 63.10%
+    * Rodada 16 removida -> Latência: 0.1171s | CPU Média: 38.53%
+  Query Q29 (Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica): 79/90 rodadas mantidas | Limites IQR: [0.1737s a 0.2112s]
+    * Rodada 28 removida -> Latência: 0.2143s | CPU Média: 24.82%
+    * Rodada 30 removida -> Latência: 0.2361s | CPU Média: 24.16%
+    * Rodada 31 removida -> Latência: 0.2600s | CPU Média: 27.10%
+    * Rodada 33 removida -> Latência: 0.2303s | CPU Média: 20.08%
+    * Rodada 54 removida -> Latência: 0.2663s | CPU Média: 32.38%
+    * Rodada 58 removida -> Latência: 0.2118s | CPU Média: 31.68%
+    * Rodada 66 removida -> Latência: 0.2131s | CPU Média: 32.88%
+    * Rodada 73 removida -> Latência: 0.2515s | CPU Média: 44.84%
+    * Rodada 75 removida -> Latência: 0.2123s | CPU Média: 35.02%
+    * Rodada 76 removida -> Latência: 0.2545s | CPU Média: 26.92%
+    * Rodada 78 removida -> Latência: 0.1672s | CPU Média: 14.37%
+  Query Q30 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 88/90 rodadas mantidas | Limites IQR: [3.7303s a 4.5109s]
+    * Rodada 64 removida -> Latência: 4.7028s | CPU Média: 24.52%
+    * Rodada 65 removida -> Latência: 4.8015s | CPU Média: 24.01%
+  Query Q31 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 86/90 rodadas mantidas | Limites IQR: [3.8530s a 4.6835s]
+    * Rodada 1 removida -> Latência: 4.9859s | CPU Média: 33.97%
+    * Rodada 4 removida -> Latência: 5.9910s | CPU Média: 29.87%
+    * Rodada 35 removida -> Latência: 4.7139s | CPU Média: 25.46%
+    * Rodada 37 removida -> Latência: 4.7308s | CPU Média: 27.68%
+  Query Q32 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 89/90 rodadas mantidas | Limites IQR: [4.2997s a 5.1974s]
+    * Rodada 74 removida -> Latência: 5.4306s | CPU Média: 28.06%
+  Query Q33 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 86/90 rodadas mantidas | Limites IQR: [4.2850s a 5.0508s]
+    * Rodada 27 removida -> Latência: 5.3310s | CPU Média: 26.71%
+    * Rodada 28 removida -> Latência: 5.0921s | CPU Média: 42.27%
+    * Rodada 59 removida -> Latência: 5.4639s | CPU Média: 26.04%
+    * Rodada 74 removida -> Latência: 5.5088s | CPU Média: 27.67%
+  Query Q34 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 86/90 rodadas mantidas | Limites IQR: [3.6014s a 4.2892s]
+    * Rodada 5 removida -> Latência: 4.4698s | CPU Média: 28.75%
+    * Rodada 12 removida -> Latência: 4.9122s | CPU Média: 29.17%
+    * Rodada 28 removida -> Latência: 4.3750s | CPU Média: 23.01%
+    * Rodada 75 removida -> Latência: 4.7292s | CPU Média: 25.74%
+  Query Q35 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 84/90 rodadas mantidas | Limites IQR: [5.4131s a 6.2596s]
+    * Rodada 1 removida -> Latência: 6.3873s | CPU Média: 28.20%
+    * Rodada 12 removida -> Latência: 6.8426s | CPU Média: 29.51%
+    * Rodada 13 removida -> Latência: 6.3579s | CPU Média: 32.83%
+    * Rodada 49 removida -> Latência: 6.2992s | CPU Média: 26.07%
+    * Rodada 56 removida -> Latência: 6.2879s | CPU Média: 27.49%
+    * Rodada 58 removida -> Latência: 6.6908s | CPU Média: 26.76%
+  Query Q36 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 89/90 rodadas mantidas | Limites IQR: [5.8166s a 6.8411s]
+    * Rodada 27 removida -> Latência: 7.1122s | CPU Média: 25.66%
+  Query Q37 (Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta)): 85/90 rodadas mantidas | Limites IQR: [5.3341s a 6.1300s]
+    * Rodada 1 removida -> Latência: 6.2162s | CPU Média: 29.76%
+    * Rodada 35 removida -> Latência: 6.2492s | CPU Média: 25.16%
+    * Rodada 67 removida -> Latência: 6.1821s | CPU Média: 27.60%
+    * Rodada 68 removida -> Latência: 6.1779s | CPU Média: 24.10%
+    * Rodada 79 removida -> Latência: 6.4554s | CPU Média: 33.34%
+  Query Q38 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 88/90 rodadas mantidas | Limites IQR: [0.1094s a 0.1475s]
+    * Rodada 12 removida -> Latência: 0.1798s | CPU Média: 53.65%
+    * Rodada 16 removida -> Latência: 0.1492s | CPU Média: 46.17%
+  Query Q39 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 86/90 rodadas mantidas | Limites IQR: [2.6148s a 3.2450s]
+    * Rodada 3 removida -> Latência: 3.2498s | CPU Média: 28.27%
+    * Rodada 5 removida -> Latência: 3.2528s | CPU Média: 35.86%
+    * Rodada 29 removida -> Latência: 3.2612s | CPU Média: 32.04%
+    * Rodada 68 removida -> Latência: 3.3655s | CPU Média: 25.21%
+  Query Q40 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 84/90 rodadas mantidas | Limites IQR: [0.1694s a 0.2178s]
+    * Rodada 3 removida -> Latência: 0.2223s | CPU Média: 21.34%
+    * Rodada 5 removida -> Latência: 0.2358s | CPU Média: 23.98%
+    * Rodada 6 removida -> Latência: 0.2316s | CPU Média: 38.86%
+    * Rodada 24 removida -> Latência: 0.2179s | CPU Média: 22.58%
+    * Rodada 42 removida -> Latência: 0.2397s | CPU Média: 24.68%
+    * Rodada 76 removida -> Latência: 0.2444s | CPU Média: 44.88%
+  Query Q41 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 87/90 rodadas mantidas | Limites IQR: [3.0632s a 3.6944s]
+    * Rodada 4 removida -> Latência: 3.7212s | CPU Média: 24.03%
+    * Rodada 35 removida -> Latência: 3.7376s | CPU Média: 29.51%
+    * Rodada 65 removida -> Latência: 3.9321s | CPU Média: 29.18%
+  Query Q42 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 86/90 rodadas mantidas | Limites IQR: [0.1108s a 0.1475s]
+    * Rodada 5 removida -> Latência: 0.1525s | CPU Média: 50.77%
+    * Rodada 9 removida -> Latência: 0.1814s | CPU Média: 11.10%
+    * Rodada 21 removida -> Latência: 0.1502s | CPU Média: 50.00%
+    * Rodada 71 removida -> Latência: 0.1544s | CPU Média: 22.65%
+  Query Q43 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 86/90 rodadas mantidas | Limites IQR: [0.1471s a 0.2044s]
+    * Rodada 3 removida -> Latência: 0.2179s | CPU Média: 26.22%
+    * Rodada 37 removida -> Latência: 0.2151s | CPU Média: 34.08%
+    * Rodada 51 removida -> Latência: 0.2097s | CPU Média: 19.38%
+    * Rodada 76 removida -> Latência: 0.2118s | CPU Média: 41.34%
+  Query Q44 (Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela): 86/90 rodadas mantidas | Limites IQR: [3.4025s a 4.1788s]
+    * Rodada 6 removida -> Latência: 4.4507s | CPU Média: 26.39%
+    * Rodada 36 removida -> Latência: 4.3704s | CPU Média: 30.79%
+    * Rodada 76 removida -> Latência: 4.3701s | CPU Média: 28.44%
+    * Rodada 87 removida -> Latência: 4.3132s | CPU Média: 27.15%
+
+
+===============================================================================================
+2. RESUMO GERAL POR ARQUITETURA / BANCO (Base Limpa)
+===============================================================================================
+
+[ClickHouse]
+ -> Latência Média Global: 1.2676s (± 1.9603s)
+ -> Consumo Médio CPU:     24.73% (± 8.42%)
+ -> Pico Médio RAM:        54.74% (± 7.63%)
+
+[PostgreSQL (Com Índices)]
+ -> Latência Média Global: 11.1542s (± 17.8053s)
+ -> Consumo Médio CPU:     23.23% (± 9.17%)
+ -> Pico Médio RAM:        55.32% (± 7.88%)
+
+[PostgreSQL (Sem Índices)]
+ -> Latência Média Global: 20.0916s (± 30.7188s)
+ -> Consumo Médio CPU:     17.64% (± 4.07%)
+ -> Pico Médio RAM:        56.15% (± 8.26%)
+
+
+===============================================================================================
+3. MÉDIAS POR BLOCO ANALÍTICO E BANCO (Base Limpa)
+===============================================================================================
+
+--- Bloco 1 - Recuperacao Direta, Consultas Simples e Agregacoes em Tabela Unica ---
+ ClickHouse                  : Latência =   0.2178s (±  0.3350s) | CPU = 23.90%
+ PostgreSQL (Com Índices)    : Latência =   4.7381s (± 10.7411s) | CPU = 22.51%
+ PostgreSQL (Sem Índices)    : Latência =   8.8017s (± 20.2918s) | CPU = 17.56%
+
+--- Bloco 2 - Manipulacao de Strings e Auditoria em Tabela Unica ---
+ ClickHouse                  : Latência =   0.1324s (±  0.0543s) | CPU = 24.90%
+ PostgreSQL (Com Índices)    : Latência =   2.0723s (±  2.8014s) | CPU = 29.27%
+ PostgreSQL (Sem Índices)    : Latência =   5.3938s (±  3.6438s) | CPU = 18.11%
+
+--- Bloco 3 - Juncoes entre sih_rd e sih_sp (Chave Composta) ---
+ ClickHouse                  : Latência =   4.9518s (±  0.8450s) | CPU = 25.43%
+ PostgreSQL (Com Índices)    : Latência =  41.2144s (± 18.1265s) | CPU = 16.93%
+ PostgreSQL (Sem Índices)    : Latência =  67.3296s (± 31.5646s) | CPU = 15.52%
+
+--- Bloco 4 - Subconsultas, CTEs (WITH) e Funcoes de Janela ---
+ ClickHouse                  : Latência =   1.5305s (±  1.6040s) | CPU = 25.78%
+ PostgreSQL (Com Índices)    : Latência =   8.3399s (±  7.4568s) | CPU = 22.57%
+ PostgreSQL (Sem Índices)    : Latência =  18.6549s (± 22.6720s) | CPU = 19.52%
+
+
+===============================================================================================
+4. ESTATÍSTICAS DETALHADAS POR QUERY E BANCO (Média, Mediana, Moda, Desvio Padrão, Min/Max)
+===============================================================================================
+
+###############################################################################################
+ BLOCO 1 - RECUPERACAO DIRETA, CONSULTAS SIMPLES E AGREGACOES EM TABELA UNICA
+###############################################################################################
+
+[Q01]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 89 |    0.8472 |     0.8423 |    0.8291 |   0.0446 |   0.7444 |   0.9317 |  29.07 |  54.51
+PostgreSQL (Com Índices)    | 84 |    0.0243 |     0.0244 |    0.0237 |   0.0025 |   0.0187 |   0.0305 |  27.54 |  53.81
+PostgreSQL (Sem Índices)    | 90 |    4.1806 |     4.1377 |    Amodal |   0.1823 |   3.9339 |   4.7576 |  18.88 |  54.87
+
+[Q02]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 87 |    0.1379 |     0.1380 |    0.1404 |   0.0075 |   0.1238 |   0.1563 |  28.04 |  52.29
+PostgreSQL (Com Índices)    | 85 |    0.1800 |     0.1813 |    0.1640 |   0.0113 |   0.1545 |   0.2067 |  26.59 |  52.49
+PostgreSQL (Sem Índices)    | 86 |    0.1285 |     0.1291 |    0.1293 |   0.0082 |   0.1097 |   0.1496 |  26.64 |  52.28
+
+[Q03]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 90 |    0.0483 |     0.0489 |    0.0459 |   0.0025 |   0.0452 |   0.0536 |  21.64 |  51.01
+PostgreSQL (Com Índices)    | 85 |    0.3505 |     0.3524 |    0.3321 |   0.0212 |   0.3031 |   0.3977 |  32.70 |  50.80
+PostgreSQL (Sem Índices)    | 81 |    4.0935 |     4.0692 |    3.9868 |   0.1577 |   3.8129 |   4.6232 |  17.70 |  51.75
+
+[Q04]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.0935 |     0.0930 |    0.0898 |   0.0055 |   0.0788 |   0.1076 |  22.94 |  49.71
+PostgreSQL (Com Índices)    | 90 |    3.9301 |     3.9470 |    Amodal |   0.1836 |   3.5872 |   4.4592 |  17.52 |  50.08
+PostgreSQL (Sem Índices)    | 88 |    4.1834 |     4.1465 |    3.9880 |   0.1827 |   3.8406 |   4.6812 |  17.03 |  50.33
+
+[Q05]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 89 |    0.0729 |     0.0725 |    0.0708 |   0.0039 |   0.0651 |   0.0820 |  23.54 |  48.91
+PostgreSQL (Com Índices)    | 84 |    0.1237 |     0.1235 |    0.1175 |   0.0066 |   0.1079 |   0.1413 |  27.45 |  48.80
+PostgreSQL (Sem Índices)    | 89 |    4.0952 |     4.0252 |    Amodal |   0.1708 |   3.8486 |   4.5398 |  15.86 |  49.08
+
+[Q06]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.0751 |     0.0750 |    0.0750 |   0.0048 |   0.0665 |   0.0870 |  21.41 |  48.65
+PostgreSQL (Com Índices)    | 84 |    7.9265 |     7.8598 |    Amodal |   0.1678 |   7.7148 |   8.4233 |  14.04 |  48.69
+PostgreSQL (Sem Índices)    | 84 |    4.1427 |     4.1121 |    Amodal |   0.1553 |   3.8846 |   4.6179 |  16.22 |  48.87
+
+[Q07]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 85 |    0.1041 |     0.1038 |    0.1011 |   0.0051 |   0.0965 |   0.1173 |  23.96 |  48.33
+PostgreSQL (Com Índices)    | 87 |    0.0786 |     0.0789 |    0.0746 |   0.0051 |   0.0661 |   0.0898 |  27.96 |  48.48
+PostgreSQL (Sem Índices)    | 88 |    4.2224 |     4.1541 |    4.5570 |   0.2124 |   3.9188 |   4.8605 |  17.35 |  48.55
+
+[Q08]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 88 |    0.0698 |     0.0701 |    0.0659 |   0.0041 |   0.0622 |   0.0796 |  18.19 |  48.41
+PostgreSQL (Com Índices)    | 89 |    3.9910 |     3.9579 |    Amodal |   0.1867 |   3.6332 |   4.4996 |  15.71 |  48.56
+PostgreSQL (Sem Índices)    | 86 |    4.1770 |     4.1540 |    4.0388 |   0.2104 |   3.8341 |   4.7743 |  15.42 |  48.49
+
+[Q09]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 87 |    0.0942 |     0.0945 |    0.0925 |   0.0044 |   0.0842 |   0.1056 |  22.19 |  48.48
+PostgreSQL (Com Índices)    | 84 |    0.1654 |     0.1658 |    0.1629 |   0.0089 |   0.1442 |   0.1861 |  26.65 |  48.43
+PostgreSQL (Sem Índices)    | 88 |    4.1970 |     4.1295 |    4.2496 |   0.1828 |   3.8039 |   4.7989 |  17.16 |  48.61
+
+[Q10]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 90 |    0.1006 |     0.0996 |    0.0958 |   0.0054 |   0.0905 |   0.1127 |  22.24 |  48.23
+PostgreSQL (Com Índices)    | 79 |    5.2099 |     5.1793 |    5.1323 |   0.0957 |   4.9835 |   5.4862 |  15.57 |  48.42
+PostgreSQL (Sem Índices)    | 89 |    4.2070 |     4.1878 |    Amodal |   0.1921 |   3.7867 |   4.7701 |  16.39 |  48.48
+
+[Q11]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 79 |    0.1244 |     0.1243 |    0.1310 |   0.0052 |   0.1105 |   0.1402 |  21.17 |  48.73
+PostgreSQL (Com Índices)    | 88 |    4.0517 |     4.0224 |    3.8842 |   0.1790 |   3.7719 |   4.4983 |  16.74 |  48.56
+PostgreSQL (Sem Índices)    | 84 |    4.1854 |     4.1280 |    4.1609 |   0.1721 |   3.9068 |   4.6686 |  16.40 |  48.56
+
+[Q12]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.1140 |     0.1139 |    0.1084 |   0.0063 |   0.0968 |   0.1285 |  22.86 |  48.36
+PostgreSQL (Com Índices)    | 88 |    0.3439 |     0.3439 |    0.3144 |   0.0210 |   0.3002 |   0.3966 |  27.96 |  48.33
+PostgreSQL (Sem Índices)    | 90 |    4.2699 |     4.2348 |    Amodal |   0.2196 |   3.8584 |   4.9010 |  16.60 |  48.51
+
+[Q13]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.1273 |     0.1265 |    0.1229 |   0.0064 |   0.1136 |   0.1451 |  23.85 |  48.39
+PostgreSQL (Com Índices)    | 85 |    0.9270 |     0.9210 |    0.9150 |   0.0337 |   0.8438 |   1.0113 |  27.09 |  48.44
+PostgreSQL (Sem Índices)    | 89 |    4.3009 |     4.2169 |    4.1757 |   0.2009 |   3.9425 |   4.8540 |  17.09 |  48.58
+
+[Q14]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 85 |    0.1843 |     0.1830 |    0.1809 |   0.0077 |   0.1698 |   0.2048 |  24.71 |  48.38
+PostgreSQL (Com Índices)    | 86 |    1.9565 |     1.9478 |    Amodal |   0.0614 |   1.8353 |   2.1359 |  19.86 |  48.49
+PostgreSQL (Sem Índices)    | 84 |    6.7305 |     6.7128 |    6.6910 |   0.1544 |   6.3243 |   7.1424 |  13.89 |  48.53
+
+[Q15]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 84 |    1.4128 |     1.4133 |    1.4068 |   0.0629 |   1.2898 |   1.5766 |  28.91 |  55.31
+PostgreSQL (Com Índices)    | 85 |   48.3205 |    48.2825 |    Amodal |   0.7411 |  46.6580 |  50.0388 |  12.97 |  57.59
+PostgreSQL (Sem Índices)    | 88 |   87.8754 |    81.6274 |    Amodal |  25.5523 |  59.3728 | 161.9355 |  15.52 |  66.32
+
+[Q16]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 88 |    0.1000 |     0.0992 |    0.0929 |   0.0062 |   0.0847 |   0.1131 |  26.89 |  56.58
+PostgreSQL (Com Índices)    | 88 |    0.4299 |     0.4288 |    0.4014 |   0.0280 |   0.3755 |   0.5041 |  29.39 |  57.42
+PostgreSQL (Sem Índices)    | 86 |    4.0927 |     4.0854 |    4.0142 |   0.0862 |   3.8913 |   4.2986 |  20.32 |  57.04
+
+[Q17]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 87 |    0.1195 |     0.1198 |    0.1138 |   0.0068 |   0.1052 |   0.1361 |  24.91 |  52.66
+PostgreSQL (Com Índices)    | 89 |    3.8966 |     3.8311 |    3.7475 |   0.1743 |   3.6122 |   4.3463 |  20.10 |  54.02
+PostgreSQL (Sem Índices)    | 89 |    4.1823 |     4.1106 |    Amodal |   0.1746 |   3.7726 |   4.5391 |  18.58 |  52.36
+
+[Q18]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.1197 |     0.1191 |    0.1228 |   0.0062 |   0.1067 |   0.1351 |  23.65 |  50.28
+PostgreSQL (Com Índices)    | 89 |    3.9213 |     3.8480 |    Amodal |   0.2232 |   3.5291 |   4.4143 |  19.52 |  50.77
+PostgreSQL (Sem Índices)    | 81 |    3.8936 |     3.8632 |    Amodal |   0.1430 |   3.5078 |   4.3409 |  19.18 |  50.10
+
+###############################################################################################
+ BLOCO 2 - MANIPULACAO DE STRINGS E AUDITORIA EM TABELA UNICA
+###############################################################################################
+
+[Q19]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 83 |    0.2806 |     0.2817 |    0.2697 |   0.0122 |   0.2553 |   0.3172 |  28.15 |  56.26
+PostgreSQL (Com Índices)    | 84 |   10.1642 |    10.1296 |   10.0455 |   0.1765 |   9.8884 |  10.5974 |  19.30 |  58.19
+PostgreSQL (Sem Índices)    | 81 |   17.2367 |    17.1518 |    Amodal |   0.2658 |  16.8295 |  18.0441 |  15.76 |  65.84
+
+[Q20]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 88 |    0.0905 |     0.0900 |    0.0911 |   0.0051 |   0.0795 |   0.1038 |  25.67 |  59.30
+PostgreSQL (Com Índices)    | 90 |    0.4188 |     0.4177 |    0.4061 |   0.0248 |   0.3631 |   0.4862 |  36.08 |  59.91
+PostgreSQL (Sem Índices)    | 86 |    4.0759 |     4.0735 |    4.0293 |   0.0954 |   3.8664 |   4.2960 |  21.98 |  60.49
+
+[Q21]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 89 |    0.0976 |     0.0976 |    0.0967 |   0.0057 |   0.0861 |   0.1090 |  29.13 |  55.11
+PostgreSQL (Com Índices)    | 88 |    0.6497 |     0.6502 |    0.6627 |   0.0406 |   0.5565 |   0.7539 |  41.59 |  55.54
+PostgreSQL (Sem Índices)    | 90 |    4.2862 |     4.2520 |    4.3736 |   0.1672 |   3.9817 |   4.6466 |  21.78 |  55.52
+
+[Q22]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.1169 |     0.1167 |    0.1097 |   0.0064 |   0.1041 |   0.1323 |  24.07 |  52.04
+PostgreSQL (Com Índices)    | 86 |    0.8844 |     0.8824 |    0.8667 |   0.0343 |   0.8080 |   0.9598 |  30.82 |  52.64
+PostgreSQL (Sem Índices)    | 89 |    4.3559 |     4.2906 |    Amodal |   0.2353 |   3.9375 |   4.9947 |  19.49 |  52.35
+
+[Q23]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 88 |    0.1160 |     0.1159 |    0.1230 |   0.0065 |   0.1026 |   0.1319 |  25.50 |  50.61
+PostgreSQL (Com Índices)    | 88 |    0.2242 |     0.2244 |    0.2362 |   0.0093 |   0.2044 |   0.2452 |  34.37 |  50.97
+PostgreSQL (Sem Índices)    | 80 |    4.1003 |     4.0863 |    Amodal |   0.1049 |   3.8507 |   4.3852 |  18.09 |  50.84
+
+[Q24]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 88 |    0.1090 |     0.1098 |    0.1106 |   0.0048 |   0.0969 |   0.1210 |  22.52 |  49.91
+PostgreSQL (Com Índices)    | 90 |    3.8880 |     3.8659 |    Amodal |   0.1770 |   3.5402 |   4.3255 |  16.91 |  50.12
+PostgreSQL (Sem Índices)    | 90 |    4.2089 |     4.1815 |    Amodal |   0.1841 |   3.8826 |   4.6886 |  16.38 |  50.09
+
+[Q25]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.1532 |     0.1532 |    0.1456 |   0.0066 |   0.1381 |   0.1710 |  24.84 |  49.42
+PostgreSQL (Com Índices)    | 89 |    0.4469 |     0.4460 |    0.4215 |   0.0227 |   0.3973 |   0.4999 |  29.53 |  49.44
+PostgreSQL (Sem Índices)    | 90 |    4.2821 |     4.2643 |    4.6525 |   0.1958 |   3.9633 |   4.7686 |  16.86 |  49.48
+
+[Q26]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 88 |    0.0886 |     0.0885 |    0.0846 |   0.0043 |   0.0777 |   0.1002 |  22.09 |  48.89
+PostgreSQL (Com Índices)    | 87 |    0.7373 |     0.7407 |    0.7234 |   0.0323 |   0.6623 |   0.8102 |  33.08 |  49.11
+PostgreSQL (Sem Índices)    | 81 |    4.2289 |     4.2341 |    Amodal |   0.0722 |   4.0874 |   4.4175 |  17.77 |  49.05
+
+[Q27]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.1279 |     0.1281 |    0.1281 |   0.0058 |   0.1153 |   0.1390 |  24.68 |  48.88
+PostgreSQL (Com Índices)    | 84 |    0.8900 |     0.8842 |    0.8667 |   0.0337 |   0.8226 |   0.9810 |  31.72 |  49.14
+PostgreSQL (Sem Índices)    | 76 |    4.3796 |     4.3455 |    4.3100 |   0.1559 |   4.0898 |   4.9696 |  17.48 |  48.89
+
+[Q28]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 87 |    0.0998 |     0.0988 |    0.0978 |   0.0051 |   0.0886 |   0.1121 |  23.54 |  49.13
+PostgreSQL (Com Índices)    | 84 |    3.8426 |     3.8255 |    3.8372 |   0.1336 |   3.6633 |   4.1968 |  16.18 |  49.14
+PostgreSQL (Sem Índices)    | 90 |    4.2167 |     4.1825 |    Amodal |   0.2044 |   3.9061 |   4.8204 |  15.61 |  49.09
+
+[Q29]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 79 |    0.1914 |     0.1913 |    0.1878 |   0.0060 |   0.1747 |   0.2052 |  23.67 |  48.90
+PostgreSQL (Com Índices)    | 89 |    1.0282 |     1.0296 |    Amodal |   0.0401 |   0.9393 |   1.1290 |  31.57 |  48.94
+PostgreSQL (Sem Índices)    | 88 |    4.6401 |     4.5736 |    4.5461 |   0.1825 |   4.3331 |   5.0085 |  17.80 |  49.09
+
+###############################################################################################
+ BLOCO 3 - JUNCOES ENTRE SIH_RD E SIH_SP (CHAVE COMPOSTA)
+###############################################################################################
+
+[Q30]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 88 |    4.1209 |     4.1172 |    Amodal |   0.1367 |   3.8143 |   4.4753 |  24.89 |  60.49
+PostgreSQL (Com Índices)    | 89 |   35.5681 |    23.9275 |    Amodal |  18.0176 |  21.8361 |  83.7625 |  17.08 |  66.49
+PostgreSQL (Sem Índices)    | 82 |   36.9928 |    28.4383 |    Amodal |  15.2042 |  26.5629 |  82.3476 |  17.03 |  66.77
+
+[Q31]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    4.2661 |     4.2327 |    4.1407 |   0.1319 |   4.0161 |   4.6127 |  26.15 |  66.14
+PostgreSQL (Com Índices)    | 84 |   35.7313 |    27.9464 |    Amodal |  14.5547 |  22.7248 |  74.5733 |  17.47 |  66.50
+PostgreSQL (Sem Índices)    | 87 |   39.0405 |    29.3571 |    Amodal |  14.1771 |  27.2974 |  79.7415 |  17.16 |  66.49
+
+[Q32]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 89 |    4.7580 |     4.7562 |    Amodal |   0.1614 |   4.4737 |   5.1471 |  26.64 |  65.91
+PostgreSQL (Com Índices)    | 89 |   37.6660 |    28.1014 |    Amodal |  15.2883 |  25.0790 |  77.6198 |  17.84 |  66.18
+PostgreSQL (Sem Índices)    | 85 |   54.9045 |    58.8297 |    Amodal |  14.7711 |  36.6159 |  97.8801 |  15.98 |  66.16
+
+[Q33]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    4.6612 |     4.6404 |    4.6237 |   0.1265 |   4.3763 |   4.9950 |  25.35 |  65.91
+PostgreSQL (Com Índices)    | 89 |   38.7619 |    31.4777 |    Amodal |  13.0196 |  26.8142 |  76.7309 |  17.13 |  66.17
+PostgreSQL (Sem Índices)    | 85 |   57.5690 |    59.4774 |   41.7630 |  12.3731 |  40.2389 |  90.6410 |  16.06 |  66.31
+
+[Q34]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    3.9464 |     3.9170 |    3.8241 |   0.1204 |   3.7300 |   4.2481 |  26.37 |  63.72
+PostgreSQL (Com Índices)    | 80 |   21.5286 |    21.5335 |    Amodal |   0.1387 |  21.2247 |  21.9104 |  18.88 |  64.28
+PostgreSQL (Sem Índices)    | 88 |   48.0619 |    48.6583 |    Amodal |  14.9255 |  30.2229 |  79.6624 |  15.20 |  66.24
+
+[Q35]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 84 |    5.8245 |     5.8249 |    5.8632 |   0.1526 |   5.5387 |   6.2134 |  25.07 |  64.88
+PostgreSQL (Com Índices)    | 86 |   45.1224 |    44.1597 |    Amodal |  13.2745 |  30.0271 |  81.8663 |  16.66 |  66.37
+PostgreSQL (Sem Índices)    | 88 |   95.5208 |    95.5954 |    Amodal |  15.4384 |  66.8674 | 129.1988 |  13.60 |  66.38
+
+[Q36]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 89 |    6.3190 |     6.2870 |    Amodal |   0.1668 |   6.0268 |   6.7439 |  24.41 |  63.66
+PostgreSQL (Com Índices)    | 75 |   73.5492 |    73.3957 |    Amodal |   0.8672 |  72.1776 |  76.6326 |  11.03 |  64.05
+PostgreSQL (Sem Índices)    | 85 |  120.2638 |   118.0471 |    Amodal |  14.9886 |  95.7824 | 163.3837 |  13.54 |  66.48
+
+[Q37]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 85 |    5.7260 |     5.6951 |    Amodal |   0.1422 |   5.5210 |   6.0793 |  24.55 |  64.85
+PostgreSQL (Com Índices)    | 85 |   44.8710 |    38.5047 |    Amodal |   8.8345 |  36.1141 |  66.0751 |  18.71 |  66.18
+PostgreSQL (Sem Índices)    | 84 |   85.7809 |    81.9468 |    Amodal |  14.9757 |  59.1220 | 122.4360 |  15.64 |  66.42
+
+###############################################################################################
+ BLOCO 4 - SUBCONSULTAS, CTES (WITH) E FUNCOES DE JANELA
+###############################################################################################
+
+[Q38]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 88 |    0.1284 |     0.1280 |    0.1273 |   0.0069 |   0.1100 |   0.1469 |  25.15 |  62.63
+PostgreSQL (Com Índices)    | 89 |    0.1080 |     0.1081 |    0.1034 |   0.0142 |   0.0808 |   0.1473 |  27.90 |  62.62
+PostgreSQL (Sem Índices)    | 87 |    4.2003 |     4.1563 |    Amodal |   0.1717 |   3.9365 |   4.6178 |  20.55 |  63.88
+
+[Q39]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    2.9161 |     2.8913 |    2.7859 |   0.1017 |   2.7181 |   3.1765 |  27.81 |  60.85
+PostgreSQL (Com Índices)    | 83 |   15.8832 |    15.8644 |    Amodal |   0.1321 |  15.6436 |  16.2518 |  18.10 |  62.19
+PostgreSQL (Sem Índices)    | 83 |   21.4278 |    21.3691 |   21.2602 |   0.2578 |  20.9079 |  22.1436 |  18.55 |  65.81
+
+[Q40]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 84 |    0.1929 |     0.1917 |    0.1876 |   0.0095 |   0.1722 |   0.2173 |  25.42 |  57.90
+PostgreSQL (Com Índices)    | 90 |    4.3841 |     4.3166 |    Amodal |   0.2015 |   4.1248 |   4.9562 |  20.87 |  59.22
+PostgreSQL (Sem Índices)    | 88 |    5.7024 |     5.6653 |    5.4850 |   0.1661 |   5.4299 |   6.2354 |  26.58 |  58.99
+
+[Q41]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 87 |    3.3718 |     3.3534 |    3.3081 |   0.1122 |   3.1712 |   3.6537 |  26.80 |  60.76
+PostgreSQL (Com Índices)    | 82 |   19.0174 |    18.9883 |    Amodal |   0.3543 |  18.1622 |  20.0241 |  23.72 |  62.35
+PostgreSQL (Sem Índices)    | 89 |   64.9765 |    58.2459 |    Amodal |  22.9169 |  39.6304 | 127.0789 |  15.33 |  66.29
+
+[Q42]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.1288 |     0.1282 |    0.1238 |   0.0063 |   0.1132 |   0.1439 |  23.88 |  60.10
+PostgreSQL (Com Índices)    | 88 |    3.9079 |     3.9047 |    Amodal |   0.1247 |   3.5639 |   4.2433 |  19.72 |  61.05
+PostgreSQL (Sem Índices)    | 90 |    4.1829 |     4.1254 |    4.1039 |   0.1549 |   3.9199 |   4.6222 |  18.58 |  60.32
+
+[Q43]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    0.1759 |     0.1730 |    0.1675 |   0.0106 |   0.1601 |   0.2041 |  25.76 |  56.17
+PostgreSQL (Com Índices)    | 90 |    0.7926 |     0.7865 |    0.7594 |   0.0363 |   0.6979 |   0.8856 |  29.36 |  56.49
+PostgreSQL (Sem Índices)    | 80 |    4.1800 |     4.1662 |    4.1629 |   0.0751 |   4.0000 |   4.3834 |  19.34 |  56.62
+
+[Q44]
+Banco                       |  N |  Média(s) | Mediana(s) |   Moda(s) |    DP(s) |   Min(s) |   Max(s) | CPU(%) | RAM(%)
+------------------------------------------------------------------------------------------------------------------
+ClickHouse                  | 86 |    3.7800 |     3.7701 |    Amodal |   0.1333 |   3.5285 |   4.1021 |  25.64 |  58.61
+PostgreSQL (Com Índices)    | 83 |   16.2466 |    16.1097 |    Amodal |   0.4060 |  15.7824 |  17.4838 |  17.71 |  59.81
+PostgreSQL (Sem Índices)    | 87 |   24.4602 |    22.7896 |    Amodal |   2.7211 |  21.8156 |  31.9409 |  17.70 |  66.18
